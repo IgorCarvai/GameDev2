@@ -1,0 +1,18 @@
+[
+	{
+		"id": 0,
+		"title": "Poop",
+		"value": 6,
+		"description": "Smelly, and sticky...",
+		"stackable": true,
+		"slug": "poop"
+	},
+	{
+		"id": 1,
+		"title": "Grass",
+		"value": 142,
+		"description": "Freshly cut!",
+		"stackable": true,
+		"slug": "grass"
+	}
+]
