@@ -4,21 +4,8 @@
     <Files>
       <File FileName="Assets\Scripts\Gravity.cs" Line="4" Column="1" />
       <File FileName="Assets\Scripts\GravityBody.cs" Line="14" Column="39" />
-      <File FileName="Assets\Scripts\PlayerMovements.cs" Line="13" Column="28" />
+      <File FileName="Assets\Scripts\PlayerMovements.cs" Line="30" Column="30" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="GravityWork" expanded="True">
-            <Node name="Assembly-CSharp" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="PlayerMovements.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

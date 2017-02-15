@@ -10,12 +10,57 @@ public class PlayerMovements : MonoBehaviour {
 
 	Vector3 moveAmount;
 	Vector3 smoothAmount;
+	bool canRotate=true;
 	public float walkSpeed = 8;
+	public float runSpeed = 16;
+	float verMovement;
+	float speed;
+	float buttonPressed=0;
+	float reset=0;
 
 	void Update(){
-		Vector3 moveDirection = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical")).normalized;
-		Vector3 targetMoveAmount = moveDirection * walkSpeed;
+		if(Input.GetButtonUp("Vertical"))
+			canRotate=true;
+
+		if ((Input.GetAxisRaw ("Vertical") < 0) && canRotate) {
+			var player = GameObject.FindGameObjectWithTag ("Player").transform;
+			transform.FindChild ("Main Camera").transform.parent = null;
+			transform.Rotate(0,180,0);
+			canRotate = false;
+			GameObject.FindGameObjectWithTag ("MainCamera").transform.parent = player;
+		}
+		if (Input.GetAxisRaw ("Vertical") == 0)
+				speed = walkSpeed;
+		if (Input.GetButtonDown ("Vertical")) {
+			if (reset > 0 && buttonPressed == 1) {
+				speed = runSpeed;
+			} else {
+				reset = .5f;
+				buttonPressed += 1;
+			}
+		}
+		if (reset > 0) {
+			reset -= 1 * Time.deltaTime;
+		} else {
+			buttonPressed = 0;
+		}
+			
+		transform.Rotate(0,Input.GetAxisRaw ("Horizontal"),0);
+		verMovement = Input.GetAxisRaw ("Vertical");
+		if (verMovement < 0)
+			verMovement = 0;
+		Vector3 moveDirection = new Vector3 (0, 0, verMovement).normalized;
+		Vector3 targetMoveAmount = moveDirection * speed;
+
+
+
+		if (Input.GetKey (KeyCode.Space))
+			targetMoveAmount.y = 3;
+
 		moveAmount = Vector3.SmoothDamp (moveAmount, targetMoveAmount, ref smoothAmount, .15f);
+
+		//Debug.Log ("moveAmount:" + moveAmount);
+			
 	}
 	void FixedUpdate(){
 		GetComponent<Rigidbody> ().MovePosition (GetComponent<Rigidbody> ().position + transform.TransformDirection (moveAmount) * Time.fixedDeltaTime);
