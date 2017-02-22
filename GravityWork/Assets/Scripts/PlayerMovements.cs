@@ -62,8 +62,8 @@ public class PlayerMovements : MonoBehaviour {
 		int dist = 14;
 		if (Vector3.Distance (transform.position, GameObject.FindGameObjectWithTag ("Enviroment").transform.position) > dist) {
 			targetMoveAmount.y = -3;
-			Debug.Log ("Hello");
-			Debug.Log ("bY");
+			//Debug.Log ("Hello");
+			//Debug.Log ("bY");
 		}
 		moveAmount = Vector3.SmoothDamp (moveAmount, targetMoveAmount, ref smoothAmount, .15f);
 

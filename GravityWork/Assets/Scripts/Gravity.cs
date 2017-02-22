@@ -8,10 +8,13 @@ using UnityEngine;
 public class Gravity : MonoBehaviour {
 
 	public float gravity = -10f;
-	public void Attract(Transform body)
-	{
+	public void Attract(Transform body){
 		Vector3 targetDirection = (body.position - transform.position).normalized;
-		body.rotation = Quaternion.FromToRotation (body.up, targetDirection) * body.rotation;
+
+		if (body.tag == "Player") {
+			body.rotation = Quaternion.FromToRotation (body.up, targetDirection) * body.rotation;
+		}
+
 		body.GetComponent<Rigidbody>().AddForce (targetDirection * gravity);
 	}
 }
