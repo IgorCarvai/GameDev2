@@ -11,6 +11,7 @@ public class PlayerMovements : MonoBehaviour {
 	Vector3 moveAmount;
 	Vector3 smoothAmount;
 	bool canRotate=true;
+	bool rotated=false;
 	public float walkSpeed = 8;
 	public float runSpeed = 16;
 	float verMovement;
@@ -24,6 +25,23 @@ public class PlayerMovements : MonoBehaviour {
 			canRotate=true;
 
 		if ((Input.GetAxisRaw ("Vertical") < 0) && canRotate) {
+			if (rotated) {
+				rotated = false;
+			} else {
+				rotated = true;
+			}
+			var player = GameObject.FindGameObjectWithTag ("Player").transform;
+			transform.FindChild ("Main Camera").transform.parent = null;
+			transform.Rotate(0,180,0);
+			canRotate = false;
+			GameObject.FindGameObjectWithTag ("MainCamera").transform.parent = player;
+		}
+		if ((Input.GetAxisRaw ("Vertical") > 0) && canRotate && rotated) {
+			if (rotated) {
+				rotated = false;
+			} else {
+				rotated = true;
+			}
 			var player = GameObject.FindGameObjectWithTag ("Player").transform;
 			transform.FindChild ("Main Camera").transform.parent = null;
 			transform.Rotate(0,180,0);
@@ -46,10 +64,14 @@ public class PlayerMovements : MonoBehaviour {
 			buttonPressed = 0;
 		}
 			
-		transform.Rotate(0,Input.GetAxisRaw ("Horizontal"),0);
+
 		verMovement = Input.GetAxisRaw ("Vertical");
-		if (verMovement < 0)
-			verMovement = 0;
+		if (rotated) {
+			transform.Rotate (0, -1 * Input.GetAxisRaw ("Horizontal"), 0);
+			verMovement = verMovement * -1;
+		} else {
+			transform.Rotate(0,Input.GetAxisRaw ("Horizontal"),0);
+		}
 		Vector3 moveDirection = new Vector3 (0, 0, verMovement).normalized;
 		Vector3 targetMoveAmount = moveDirection * speed;
 
