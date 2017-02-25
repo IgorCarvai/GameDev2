@@ -2,17 +2,405 @@
 	{
 		"id": 0,
 		"title": "Poop",
-		"value": 6,
 		"description": "Smelly, and sticky...",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "poop"
 	},
 	{
 		"id": 1,
 		"title": "Grass",
-		"value": 142,
 		"description": "Freshly cut!",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "grass"
+	},
+	{
+		"id": 2,
+		"title": "Acid",
+		"description": "Careful handling this!",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "acid"
+	},
+	{
+		"id": 3,
+		"title": "Splint",
+		"description": "Supports squishy human flesh!",
+		"ingredients": 
+		{
+			"cloth": 1,
+			"bone": 1,
+			"wood": 1
+		},
+		"stackable": true,
+		"slug": "splint"
+	},
+	{
+		"id": 4,
+		"title": "Bone",
+		"description": "Tough and sturdy.",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "bone"
+	},
+	{
+		"id": 5,
+		"title": "Butterfly Scales",
+		"description": "Very colorful.",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "butterfly_scales"
+	},
+	{
+		"id": 6,
+		"title": "Cloth",
+		"description": "Keeps you warm.",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "cloth"
+	},
+	{
+		"id": 7,
+		"title": "Coal",
+		"description": "Pretty flammable.",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "coal"
+	},
+	{
+		"id": 8,
+		"title": "Crystal",
+		"description": "See through, malleable.",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "crystal"
+	},
+	{
+		"id": 9,
+		"title": "Dirt",
+		"description": "From the ground.",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "dirt"
+	},
+	{
+		"id": 10,
+		"title": "Flowers",
+		"description": "Smells nice!",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "flowers"
+	},
+	{
+		"id": 11,
+		"title": "Hairball",
+		"description": "From a feline's stomach!",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "hairball"
+	},
+	{
+		"id": 12,
+		"title": "Landfill Trash",
+		"description": "Junk... or is it?",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "landfill_trash"
+	},
+	{
+		"id": 13,
+		"title": "Match",
+		"description": "Tiny but can really make a huge spark!",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "match"
+	},
+	{
+		"id": 14,
+		"title": "Mirror Shards",
+		"description": "Looking sharp!",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "mirror_shards"
+	},
+	{
+		"id": 15,
+		"title": "Oil",
+		"description": "Greasy but good for fuel.",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "oil"
+	},
+	{
+		"id": 16,
+		"title": "Rocks",
+		"description": "Just found them lying around.",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "rocks"
+	},
+	{
+		"id": 17,
+		"title": "Roots",
+		"description": "Earthly, from under the ground.",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "roots"
+	},
+	{
+		"id": 18,
+		"title": "Snakeskin",
+		"description": "It's a snake's old skin...  ",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "snakeskin"
+	},
+	{
+		"id": 19,
+		"title": "Squirrel Fluff",
+		"description": "Pretty absorbent, fluffy.",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "squirrel_fluff"
+	},
+	{
+		"id": 20,
+		"title": "Steel",
+		"description": "Durable.",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "steel"
+	},
+	{
+		"id": 21,
+		"title": "Tree Branch",
+		"description": "Can be used as a weapon? Easily breakable.",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "tree_branch"
+	},
+	{
+		"id": 22,
+		"title": "Water",
+		"description": "Wet, pretty useful.",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "water"
+	},
+	{
+		"id": 23,
+		"title": "Wood",
+		"description": "Lumber, pretty useful.",
+		"ingredients": {},
+		"stackable": true,
+		"slug": "wood"
+	},
+	{
+		"id": 24,
+		"title": "Fuel Tank",
+		"description": "For storing fuel.",
+		"ingredients": 
+		{
+			"steel": 10,
+			"wire": 10,
+			"screw": 15,
+			"coal": 30
+		},
+		"stackable": false,
+		"slug": "fuel_tank"
+	},
+	{
+		"id": 25,
+		"title": "LED Lights",
+		"description": "Light bulbs that last longer!",
+		"ingredients": 
+		{
+			"match": 3,
+			"wire": 2
+		},
+		"stackable": true,
+		"slug": "led_lights"
+	},
+	{
+		"id": 26,
+		"title": "Engine",
+		"description": "To get our ship moving!",
+		"ingredients": 
+		{
+			"wire": 15,
+			"screw": 25,
+			"steel": 25,
+			"piston": 3
+		},
+		"stackable": false,
+		"slug": "engine"
+	},
+	{
+		"id": 27,
+		"title": "Radiator",
+		"description": "To keep us warm in outer space.",
+		"ingredients": 
+		{
+			"steel": 15,
+			"screw": 10,
+			"cloth": 10
+		},
+		"stackable": false,
+		"slug": "radiator"
+	},
+	{
+		"id": 28,
+		"title": "Sensors",
+		"description": "For detecting spatial movement in outer space!",
+		"ingredients": 
+		{
+			"steel": 10,
+			"wire": 5
+		},
+		"stackable": false,
+		"slug": "senors"
+	},
+	{
+		"id": 29,
+		"title": "Solar Panels",
+		"description": "Used to generate power and electricity.",
+		"ingredients": 
+		{
+			"mirror_shards": 10,
+			"steel": 5,
+			"wire": 2
+		},
+		"stackable": false,
+		"slug": "solar_panels"
+	},
+	{
+		"id": 30,
+		"title": "Solid Rocket Booster",
+		"description": "Used for liftoff!",
+		"ingredients": 
+		{
+			"steel": 30,
+			"screw": 10,
+			"coal": 10,
+			"piston": 2
+		},
+		"stackable": false,
+		"slug": "solid_rocket_booster"
+	},
+	{
+		"id": 31,
+		"title": "Thrusters",
+		"description": "Used for maneuvering and positioning in outer space!",
+		"ingredients": 
+		{
+			"steel": 10,
+			"piston": 4
+		},
+		"stackable": false,
+		"slug": "thrusters"
+	},
+	{
+		"id": 32,
+		"title": "Wire",
+		"description": "To connect electricity signals.",
+		"ingredients": 
+		{
+			"snakeskin": 2,
+			"cloth": 1
+		},
+		"stackable": true,
+		"slug": "wire"
+	},
+	{
+		"id": 33,
+		"title": "Cog",
+		"description": "It's got lots of teeth!",
+		"ingredients": 
+		{
+			"poop": 1, 
+			"steel": 1
+		},
+		"stackable": true,
+		"slug": "cog"
+	},
+	{
+		"id": 34,
+		"title": "Screw",
+		"description": "Joins things together.",
+		"ingredients": 
+		{
+			"cog": 1,
+			"steel": 1
+		},
+		"stackable": true,
+		"slug": "screw"
+	},
+	{
+		"id": 35,
+		"title": "Piston",
+		"description": "A heavy cylinder used to induce motion.",
+		"ingredients": 
+		{
+			"steel": 5,
+			"wire": 1
+		},
+		"stackable": true,
+		"slug": "piston"
+	},
+	{
+		"id": 36,
+		"title": "Pulse Pusher",
+		"description": "Pushes enemies away.",
+		"ingredients": 
+		{
+			"piston": 2,
+			"crystals": 10,
+			"landfill_trash": 25,
+			"wire": 3 
+		},
+		"stackable": true,
+		"slug": "pulse_pusher"
+	},
+	{
+		"id": 37,
+		"title": "Ballistic Bomber",
+		"description": "Shoots area of effect bombs (hits multiple enemies).",
+		"ingredients": 
+		{
+			"coal": 25,
+			"acid": 10,
+			"poop": 15,
+			"cog": 10
+		},
+		"stackable": true,
+		"slug": "ballistic_bomber"
+	},
+	{
+		"id": 38,
+		"title": "The Piercer",
+		"description": "Pierces through enemy armour, but does less actual damage.",
+		"ingredients": 
+		{
+			"mirror_shards": 15,
+			"steel": 10,
+			"bone": 20
+		},
+		"stackable": true,
+		"slug": "the_piercer"
+	},
+	{
+		"id": 39,
+		"title": "Rapid Ripper",
+		"description": "Extremely high fire rate.",
+		"ingredients": 
+		{
+			"wood": 10,
+			"screw": 15,
+			"butterfly_scales": 25,
+			"acid": 10
+		},
+		"stackable": true,
+		"slug": "rapid_ripper"
 	}
 ]
