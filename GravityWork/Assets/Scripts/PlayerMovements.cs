@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 /// <summary>
@@ -12,14 +14,40 @@ public class PlayerMovements : MonoBehaviour {
 	Vector3 smoothAmount;
 	bool canRotate=true;
 	bool rotated=false;
-	public float walkSpeed = 8;
-	public float runSpeed = 16;
+	bool start = true;
+	bool cpuCollided = false;
 	float verMovement;
 	float speed;
 	float buttonPressed=0;
 	float reset=0;
+	string cpuName;
+	public float walkSpeed = 8;
+	public float runSpeed = 16;
+	public GameObject E;
+	private GameObject tooltip;
 
+
+	void toggleInventory(){
+		if (E.activeSelf && !Input.GetMouseButton(0)) {
+			if (GameObject.Find ("Description")!=null) {
+				tooltip = GameObject.Find ("Description");
+				tooltip.SetActive (false);
+			}
+			E.SetActive(false);
+		}
+		else{
+			E.SetActive(true);
+		}
+	}
 	void Update(){
+		if (start) {
+			E.SetActive (false);
+			start = false;
+		}
+		if(Input.GetKeyUp(KeyCode.E)){
+			toggleInventory ();
+		}
+
 		//Debug.Log(Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag ("Enviroment").transform.position));
 		if(Input.GetButtonUp("Vertical"))
 			canRotate=true;
@@ -75,8 +103,6 @@ public class PlayerMovements : MonoBehaviour {
 		Vector3 moveDirection = new Vector3 (0, 0, verMovement).normalized;
 		Vector3 targetMoveAmount = moveDirection * speed;
 
-
-
 		if (Input.GetKey (KeyCode.Space)) {
 			targetMoveAmount.y = 3;
 		}
@@ -84,16 +110,35 @@ public class PlayerMovements : MonoBehaviour {
 		int dist = 14;
 		if (Vector3.Distance (transform.position, GameObject.FindGameObjectWithTag ("Enviroment").transform.position) > dist) {
 			targetMoveAmount.y = -3;
-			//Debug.Log ("Hello");
-			//Debug.Log ("bY");
 		}
 		moveAmount = Vector3.SmoothDamp (moveAmount, targetMoveAmount, ref smoothAmount, .15f);
 
-		//Debug.Log ("moveAmount:" + moveAmount);
-			
+		if (Input.GetMouseButtonUp (0) && cpuCollided) {
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+			if(Physics.Raycast(ray, out hit)){
+				if(hit.transform.name == cpuName)
+				{
+					Debug.Log (cpuName);
+					//Do inteaction here!
+					//or call a function on the other object
+				}
+			}
+		}
 	}
 	void FixedUpdate(){
 		GetComponent<Rigidbody> ().MovePosition (GetComponent<Rigidbody> ().position + transform.TransformDirection (moveAmount) * Time.fixedDeltaTime);
+	}
+	void OnTriggerExit(Collider col){
+		if (col.gameObject.tag == "CPU") {
+			cpuCollided = false;
+		}
+	}
+	void OnTriggerEnter(Collider col){
+		if (col.gameObject.tag == "CPU") {
+			cpuCollided = true;
+			cpuName = col.gameObject.name;
+		}
 	}
 
 }
