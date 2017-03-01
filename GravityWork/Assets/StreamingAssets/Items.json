@@ -56,7 +56,11 @@
 		"id": 6,
 		"title": "Cloth",
 		"description": "Keeps you warm.",
-		"ingredients": {},
+		"ingredients": 
+		{
+			"squirrel_fluff": 3,
+			"hairball": 2
+		},
 		"stackable": true,
 		"slug": "cloth"
 	},
@@ -112,7 +116,11 @@
 		"id": 13,
 		"title": "Match",
 		"description": "Tiny but can really make a huge spark!",
-		"ingredients": {},
+		"ingredients": 
+		{
+			"butterfly_scales": 4,
+			"wood": 1
+		},
 		"stackable": true,
 		"slug": "match"
 	},
