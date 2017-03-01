@@ -16,6 +16,7 @@ public class PlayerMovements : MonoBehaviour {
 	bool rotated=false;
 	bool start = true;
 	bool cpuCollided = false;
+	bool enventoryOn=false;
 	float verMovement;
 	float speed;
 	float buttonPressed=0;
@@ -33,10 +34,12 @@ public class PlayerMovements : MonoBehaviour {
 				tooltip = GameObject.Find ("Description");
 				tooltip.SetActive (false);
 			}
+			enventoryOn = false;
 			E.SetActive(false);
 		}
 		else{
 			E.SetActive(true);
+			enventoryOn = true;
 		}
 	}
 	void Update(){
@@ -113,7 +116,7 @@ public class PlayerMovements : MonoBehaviour {
 		}
 		moveAmount = Vector3.SmoothDamp (moveAmount, targetMoveAmount, ref smoothAmount, .15f);
 
-		if (Input.GetMouseButtonUp (0) && cpuCollided) {
+		if (Input.GetMouseButtonUp (0) && cpuCollided && enventoryOn==false) {
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 			if(Physics.Raycast(ray, out hit)){
