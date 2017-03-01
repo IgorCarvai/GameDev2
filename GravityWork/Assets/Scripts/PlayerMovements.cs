@@ -106,14 +106,7 @@ public class PlayerMovements : MonoBehaviour {
 		Vector3 moveDirection = new Vector3 (0, 0, verMovement).normalized;
 		Vector3 targetMoveAmount = moveDirection * speed;
 
-		if (Input.GetKey (KeyCode.Space)) {
-			targetMoveAmount.y = 3;
-		}
-		//Change this according to the size of the planet
-		int dist = 14;
-		if (Vector3.Distance (transform.position, GameObject.FindGameObjectWithTag ("Enviroment").transform.position) > dist) {
-			targetMoveAmount.y = -3;
-		}
+	
 		moveAmount = Vector3.SmoothDamp (moveAmount, targetMoveAmount, ref smoothAmount, .15f);
 
 		if (Input.GetMouseButtonUp (0) && cpuCollided && enventoryOn==false) {
