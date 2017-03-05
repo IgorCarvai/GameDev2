@@ -12,7 +12,7 @@ public class GravityBody : MonoBehaviour {
 	{
 		planet = GameObject.FindGameObjectWithTag ("Enviroment").GetComponent<Gravity>();
 		GetComponent<Rigidbody>().useGravity = false;
-		if (this.name == "TestPlayer" ||this.name == "PLanet") {
+		if (this.tag == "Player" ||this.name == "Planet") {
 			GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotation;
 		}
 	}
