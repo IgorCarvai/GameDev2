@@ -17,13 +17,13 @@ public class Slot : MonoBehaviour, IDropHandler {
     public void OnDrop(PointerEventData eventData)
     {
         ItemData droppedItem = eventData.pointerDrag.GetComponent<ItemData>();
-        //no item in this slot
-        if (inv.items[id].ID == -1)
+        if (inv.items[id].ID == -1 && this.transform.childCount < 1)  //no item in this slot
         {
             //clean up old slot before making new ones
             inv.items[droppedItem.slot] = new Item();
             inv.items[id] = droppedItem.item;
             droppedItem.slot = id;
+            ItemData.draggedItem.transform.SetParent(transform);
         }    
 
         else if (droppedItem.slot != id) //when there's an item, swap
@@ -41,6 +41,11 @@ public class Slot : MonoBehaviour, IDropHandler {
             inv.items[id] = droppedItem.item;
         }
 
+        if (droppedItem.transform.parent != ItemData.startParent) //if return craft item to inventory, remove from craft and return to inv list
+        {
+            CraftingSystem.toMake.Remove(droppedItem.item.Slug);
+            inv.items.Add(droppedItem.item);
+        }
     }
 
 }

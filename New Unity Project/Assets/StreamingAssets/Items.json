@@ -2,370 +2,413 @@
 	{
 		"id": 0,
 		"title": "Poop",
-		"value": 6,
 		"description": "Smelly, and sticky...",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "poop"
 	},
 	{
 		"id": 1,
 		"title": "Grass",
-		"value": 142,
 		"description": "Freshly cut!",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "grass"
 	},
 	{
 		"id": 2,
 		"title": "Acid",
-		"value": 1,
 		"description": "Careful handling this!",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "acid"
 	},
 	{
 		"id": 3,
-		"title": "Besalt",
-		"value": 412,
-		"description": "A pungent volcanic mineral.",
+		"title": "Splint",
+		"description": "Supports squishy human flesh!",
+		"ingredients": 
+		{
+			"cloth": 3,
+			"bone": 1,
+			"wood": 2
+		},
 		"stackable": true,
-		"slug": "besalt"
-	},
-	{
-		"id": 4,
-		"title": "Bird Eyelashes",
-		"value": 7,
-		"description": "How the hell did you get this?",
-		"stackable": true,
-		"slug": "bird_eyelashes"
+		"slug": "splint"
 	},
 	{
 		"id": 4,
 		"title": "Bone",
-		"value": 91,
 		"description": "Tough and sturdy.",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "bone"
 	},
 	{
 		"id": 5,
 		"title": "Butterfly Scales",
-		"value": 124,
 		"description": "Very colorful.",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "butterfly_scales"
 	},
 	{
 		"id": 6,
 		"title": "Cloth",
-		"value": 42,
 		"description": "Keeps you warm.",
+		"ingredients": 
+		{
+			"squirrel_fluff": 3,
+			"hairball": 2
+		},
 		"stackable": true,
 		"slug": "cloth"
 	},
 	{
 		"id": 7,
 		"title": "Coal",
-		"value": 193,
 		"description": "Pretty flammable.",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "coal"
 	},
 	{
 		"id": 8,
-		"title": "Coral",
-		"value": 9024,
-		"description": "The mineral amagamations of the skeletons of tiny water critters.",
-		"stackable": true,
-		"slug": "coral"
-	},
-	{
-		"id": 9,
-		"title": "Dandelion Fluff",
-		"value": 604,
-		"description": "Holds aloft the seeds of unkillable weeds. Feels nice though.",
-		"stackable": true,
-		"slug": "dandelion_fluff"
-	},
-	{
-		"id": 10,
 		"title": "Crystal",
-		"value": 59,
 		"description": "See through, malleable.",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "crystal"
 	},
 	{
-		"id": 11,
+		"id": 9,
 		"title": "Dirt",
-		"value": 335,
 		"description": "From the ground.",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "dirt"
 	},
 	{
-		"id": 12,
+		"id": 10,
 		"title": "Flowers",
-		"value": 33,
 		"description": "Smells nice!",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "flowers"
 	},
 	{
-		"id": 13,
+		"id": 11,
 		"title": "Hairball",
-		"value": 95,
 		"description": "From a feline's stomach!",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "hairball"
 	},
 	{
-		"id": 14,
-		"title": "Engine",
-		"value": 49,
-		"description": "To get our ship moving!",
-		"stackable": false,
-		"slug": "engine"
-	},
-	{
-		"id": 15,
+		"id": 12,
 		"title": "Landfill Trash",
-		"value": 36,
 		"description": "Junk... or is it?",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "landfill_trash"
 	},
 	{
-		"id": 16,
-		"title": "Leaves",
-		"value": 92,
-		"description": "Colorful and crunchy!",
-		"stackable": true,
-		"slug": "leaves"
-	},
-	{
-		"id": 17,
+		"id": 13,
 		"title": "Match",
-		"value": 335,
 		"description": "Tiny but can really make a huge spark!",
+		"ingredients": 
+		{
+			"butterfly_scales": 4,
+			"wood": 1
+		},
 		"stackable": true,
 		"slug": "match"
 	},
 	{
-		"id": 18,
+		"id": 14,
 		"title": "Mirror Shards",
-		"value": 59,
 		"description": "Looking sharp!",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "mirror_shards"
 	},
 	{
-		"id": 19,
-		"title": "Mushrooms",
-		"value": 69,
-		"description": "Edible?",
-		"stackable": true,
-		"slug": "mooshrooms"
-	},
-	{
-		"id": 20,
+		"id": 15,
 		"title": "Oil",
-		"value": 67,
 		"description": "Greasy but good for fuel.",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "oil"
 	},
 	{
-		"id": 21,
-		"title": "Ostrich Egg",
-		"value": 1239,
-		"description": "How did you get this?",
-		"stackable": true,
-		"slug": "ostrich_egg"
-	},
-	{
-		"id": 22,
+		"id": 16,
 		"title": "Rocks",
-		"value": 795,
 		"description": "Just found them lying around.",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "rocks"
 	},
 	{
-		"id": 23,
+		"id": 17,
 		"title": "Roots",
-		"value": 769,
 		"description": "Earthly, from under the ground.",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "roots"
 	},
 	{
-		"id": 24,
-		"title": "Rubble",
-		"value": 9,
-		"description": "Found them lying around.",
-		"stackable": true,
-		"slug": "rubble"
-	},
-	{
-		"id": 25,
-		"title": "Snail Shells",
-		"value": 34,
-		"description": "Where'd the snails go?",
-		"stackable": true,
-		"slug": "snail_shells"
-	},
-	{
-		"id": 26,
+		"id": 18,
 		"title": "Snakeskin",
-		"value": 335,
 		"description": "It's a snake's old skin...  ",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "snakeskin"
 	},
 	{
-		"id": 27,
+		"id": 19,
 		"title": "Squirrel Fluff",
-		"value": 335,
 		"description": "Pretty absorbent, fluffy.",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "squirrel_fluff"
 	},
 	{
-		"id": 28,
+		"id": 20,
 		"title": "Steel",
-		"value": 335,
 		"description": "Durable.",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "steel"
 	},
 	{
-		"id": 29,
-		"title": "Tire",
-		"value": 335,
-		"description": "Whoes car did this come from?",
-		"stackable": true,
-		"slug": "tire"
-	},
-	{
-		"id": 30,
-		"title": "Tree Bark",
-		"value": 335,
-		"description": "Edible? Pretty tough.",
-		"stackable": true,
-		"slug": "tree_bark"
-	},
-	{
-		"id": 31,
+		"id": 21,
 		"title": "Tree Branch",
-		"value": 335,
 		"description": "Can be used as a weapon? Easily breakable.",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "tree_branch"
 	},
 	{
-		"id": 32,
-		"title": "Turtle Shells",
-		"value": 335,
-		"description": "Where'd the turtle go...?",
-		"stackable": true,
-		"slug": "turtle_shells"
-	},
-	{
-		"id": 33,
+		"id": 22,
 		"title": "Water",
-		"value": 30,
 		"description": "Wet, pretty useful.",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "water"
 	},
 	{
-		"id": 34,
+		"id": 23,
 		"title": "Wood",
-		"value": 745,
 		"description": "Lumber, pretty useful.",
+		"ingredients": {},
 		"stackable": true,
 		"slug": "wood"
 	},
 	{
-		"id": 35,
+		"id": 24,
 		"title": "Fuel Tank",
-		"value": 67,
 		"description": "For storing fuel.",
+		"ingredients": 
+		{
+			"steel": 10,
+			"wire": 10,
+			"screw": 15,
+			"coal": 30
+		},
 		"stackable": false,
 		"slug": "fuel_tank"
 	},
 	{
-		"id": 36,
+		"id": 25,
 		"title": "LED Lights",
-		"value": 67,
 		"description": "Light bulbs that last longer!",
+		"ingredients": 
+		{
+			"match": 3,
+			"wire": 2
+		},
 		"stackable": true,
 		"slug": "led_lights"
 	},
 	{
-		"id": 37,
+		"id": 26,
+		"title": "Engine",
+		"description": "To get our ship moving!",
+		"ingredients": 
+		{
+			"wire": 15,
+			"screw": 25,
+			"steel": 25,
+			"piston": 3
+		},
+		"stackable": false,
+		"slug": "engine"
+	},
+	{
+		"id": 27,
 		"title": "Radiator",
-		"value": 67,
 		"description": "To keep us warm in outer space.",
+		"ingredients": 
+		{
+			"steel": 15,
+			"screw": 10,
+			"cloth": 10
+		},
 		"stackable": false,
 		"slug": "radiator"
 	},
 	{
-		"id": 38,
+		"id": 28,
 		"title": "Sensors",
-		"value": 67,
 		"description": "For detecting spatial movement in outer space!",
+		"ingredients": 
+		{
+			"steel": 10,
+			"wire": 5
+		},
 		"stackable": false,
 		"slug": "senors"
 	},
 	{
-		"id": 39,
+		"id": 29,
 		"title": "Solar Panels",
-		"value": 67,
 		"description": "Used to generate power and electricity.",
+		"ingredients": 
+		{
+			"mirror_shards": 10,
+			"steel": 5,
+			"wire": 2
+		},
 		"stackable": false,
 		"slug": "solar_panels"
 	},
 	{
-		"id": 40,
+		"id": 30,
 		"title": "Solid Rocket Booster",
-		"value": 67,
 		"description": "Used for liftoff!",
+		"ingredients": 
+		{
+			"steel": 30,
+			"screw": 10,
+			"coal": 10,
+			"piston": 2
+		},
 		"stackable": false,
 		"slug": "solid_rocket_booster"
 	},
 	{
-		"id": 41,
+		"id": 31,
 		"title": "Thrusters",
-		"value": 67,
 		"description": "Used for maneuvering and positioning in outer space!",
+		"ingredients": 
+		{
+			"steel": 10,
+			"piston": 4
+		},
 		"stackable": false,
 		"slug": "thrusters"
 	},
 	{
-		"id": 42,
+		"id": 32,
 		"title": "Wire",
-		"value": 67,
 		"description": "To connect electricity signals.",
+		"ingredients": 
+		{
+			"snakeskin": 2,
+			"cloth": 1
+		},
 		"stackable": true,
 		"slug": "wire"
 	},
 	{
-		"id": 43,
+		"id": 33,
 		"title": "Cog",
-		"value": 67,
 		"description": "It's got lots of teeth!",
+		"ingredients": 
+		{
+			"poop": 1, 
+			"steel": 1
+		},
 		"stackable": true,
 		"slug": "cog"
 	},
 	{
-		"id": 44,
+		"id": 34,
 		"title": "Screw",
-		"value": 67,
 		"description": "Joins things together.",
+		"ingredients": 
+		{
+			"cog": 1,
+			"steel": 1
+		},
 		"stackable": true,
 		"slug": "screw"
+	},
+	{
+		"id": 35,
+		"title": "Piston",
+		"description": "A heavy cylinder used to induce motion.",
+		"ingredients": 
+		{
+			"steel": 5,
+			"wire": 1
+		},
+		"stackable": true,
+		"slug": "piston"
+	},
+	{
+		"id": 36,
+		"title": "Pulse Pusher",
+		"description": "Pushes enemies away.",
+		"ingredients": 
+		{
+			"piston": 2,
+			"crystals": 10,
+			"landfill_trash": 25,
+			"wire": 3 
+		},
+		"stackable": true,
+		"slug": "pulse_pusher"
+	},
+	{
+		"id": 37,
+		"title": "Ballistic Bomber",
+		"description": "Shoots area of effect bombs (hits multiple enemies).",
+		"ingredients": 
+		{
+			"coal": 25,
+			"acid": 10,
+			"poop": 15,
+			"cog": 10
+		},
+		"stackable": true,
+		"slug": "ballistic_bomber"
+	},
+	{
+		"id": 38,
+		"title": "The Piercer",
+		"description": "Pierces through enemy armour, but does less actual damage.",
+		"ingredients": 
+		{
+			"mirror_shards": 15,
+			"steel": 10,
+			"bone": 20
+		},
+		"stackable": true,
+		"slug": "the_piercer"
+	},
+	{
+		"id": 39,
+		"title": "Rapid Ripper",
+		"description": "Extremely high fire rate.",
+		"ingredients": 
+		{
+			"wood": 10,
+			"screw": 15,
+			"butterfly_scales": 25,
+			"acid": 10
+		},
+		"stackable": true,
+		"slug": "rapid_ripper"
 	}
-
 ]
