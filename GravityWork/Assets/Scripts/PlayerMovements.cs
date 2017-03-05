@@ -55,7 +55,7 @@ public class PlayerMovements : MonoBehaviour {
 		if(Input.GetButtonUp("Vertical"))
 			canRotate=true;
 
-		if ((Input.GetAxisRaw ("Vertical") < 0) && canRotate) {
+		if ((Input.GetAxisRaw ("Vertical") < 0) && canRotate && !rotated) {
 			if (rotated) {
 				rotated = false;
 			} else {
