@@ -7,18 +7,16 @@ using UnityEngine;
 
 public class ClickCraft : MonoBehaviour {
 
-    int count, notin;
+    int count;
     private Inventory inv;
     public Item craftItem;
     public GameObject itemp;
-    ItemDatabase database;
     GameObject craftSlot;
 
     private Dictionary<string, int> craftItemIng = new Dictionary<string, int>(); //to check inventory items against, final item ingredients
 
     void Start()
     {
-        database = GetComponent<ItemDatabase>();
         inv = GameObject.Find("Inventory").GetComponent<Inventory>();
         craftSlot = GameObject.Find("FinishedItem");
     }
@@ -38,7 +36,6 @@ public class ClickCraft : MonoBehaviour {
         if (finalList.Count != 0) //if list is not empty and clicked craft
         {
             count = 0;
-            notin = 0;
             foreach (Item item in inv.items) //look through entire list of items
             {
                 foreach (KeyValuePair<string, int> pair in finalList)//look through dictionary of ingredients
