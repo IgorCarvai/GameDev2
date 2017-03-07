@@ -1,33 +1,41 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using System;
 
 public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler {
 
     public Item item;
+    public static GameObject draggedItem;
     public int amount;
     public int slot;
+    public Vector3 originalPos;
+    public static Transform startParent;
 
-    private Inventory inv;
+    public static Inventory inv;
+    public static CraftingSystem craft;
     private Tooltip tooltip;
-    private Vector2 offset; 
-
 
     void Start()
     {
+
         inv = GameObject.Find("Inventory").GetComponent<Inventory>();
+        craft = GameObject.Find("CraftSystem").GetComponent<CraftingSystem>();
+
         tooltip = inv.GetComponent<Tooltip>();
     }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (item != null)
         {
-            offset = eventData.position - new Vector2(this.transform.position.x, this.transform.position.y);
-            this.transform.SetParent(this.transform.parent.parent);
-            //x, y of mouse
-            this.transform.position = eventData.position - offset;
+            originalPos = this.transform.position;
+            startParent = this.transform.parent.parent;
+            draggedItem = gameObject;
             GetComponent<CanvasGroup>().blocksRaycasts = false;
+            draggedItem.GetComponent<LayoutElement>().ignoreLayout = true;
+            draggedItem.transform.SetParent(draggedItem.transform.parent.parent);
         }
     }
 
@@ -36,15 +44,25 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         if (item != null)
         {
             //x, y of mouse
-            this.transform.position = eventData.position - offset;
+            this.transform.position = eventData.position;
         }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        this.transform.SetParent(inv.slots[slot].transform);
-        this.transform.position = inv.slots[slot].transform.position;
+        //if dropped in inventory / original parent, item start parent
+        if (this.transform.parent == startParent)
+        {
+            this.transform.SetParent(inv.slots[slot].transform);
+            this.transform.position = inv.slots[slot].transform.position;
+        }
+        else //clean the slot
+        {
+            inv.items[slot] = new Item();
+        }
+
         GetComponent<CanvasGroup>().blocksRaycasts = true;
+        draggedItem.GetComponent<LayoutElement>().ignoreLayout = false;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -56,4 +74,5 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     {
         tooltip.Deactivate();
     }
+
 }

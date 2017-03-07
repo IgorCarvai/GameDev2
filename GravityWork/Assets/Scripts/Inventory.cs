@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour{
     GameObject slotPanel;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
-    ItemDatabase database;
+    public ItemDatabase database;
 
     int slotAmount;
     public List<Item> items = new List<Item>();
@@ -33,11 +33,19 @@ public class Inventory : MonoBehaviour{
         }
 
         AddItem(0);
-        AddItem(0);
-        AddItem(0);
-        AddItem(0);
-        AddItem(0);
         AddItem(1);
+        AddItem(2);
+        AddItem(3);
+        AddItem(4);
+        AddItem(5);
+        AddItem(6);
+        AddItem(23);
+        AddItem(11);
+        AddItem(11);
+        AddItem(11);
+        AddItem(19);
+        AddItem(19);
+        AddItem(19);
     }
 
     public void AddItem(int id)
@@ -62,8 +70,7 @@ public class Inventory : MonoBehaviour{
         {
             for (int i = 0; i < items.Count; i++)
             {
-                //empty item
-                if (items[i].ID == -1)
+                if (items[i].ID == -1) //empty item
                 {
                     items[i] = itemToAdd;
                     GameObject itemObj = Instantiate(inventoryItem);
@@ -83,12 +90,18 @@ public class Inventory : MonoBehaviour{
         }
     }
 
+    public void RemoveItem(int id)
+    {
+        items.Remove(database.FetchItemByID(id));
+    }
+
     bool CheckIfItemExists(Item item)
     {
         for (int i = 0; i < items.Count; i++)
             //already have one in inventory
             if (items[i].ID == item.ID)
                 return true;
+
         return false;
     }
 }

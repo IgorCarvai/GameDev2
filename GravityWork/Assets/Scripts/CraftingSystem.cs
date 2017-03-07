@@ -8,10 +8,11 @@ using UnityEngine.EventSystems;
 
 public class CraftingSystem : MonoBehaviour {
 
+   //public static List<Item> ingredients = new List<Item>();
     public static Dictionary<string, int> toMake = new Dictionary<string, int>();
     private Inventory inv;
 
-    void Update()
+    void Start()
     {
     }
 

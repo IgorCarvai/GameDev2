@@ -26,6 +26,7 @@ public class PlayerMovements : MonoBehaviour {
 	public float runSpeed = 16;
 	public GameObject E;
 	private GameObject tooltip;
+	public GameObject craftSystem;
 
 
 	void toggleInventory(){
@@ -42,14 +43,29 @@ public class PlayerMovements : MonoBehaviour {
 			enventoryOn = true;
 		}
 	}
+	void toggleCraft(){
+		if (cpuCollided) {
+
+			if (craftSystem.activeSelf) {
+				craftSystem.SetActive (false);
+			} else {
+				craftSystem.SetActive (true);
+			}
+
+		}
+
+	}
 	void Update(){
 		if (start) {
 			E.SetActive (false);
+			craftSystem.SetActive (false);
 			start = false;
 		}
 		if(Input.GetKeyUp(KeyCode.E)){
 			toggleInventory ();
+			toggleCraft ();
 		}
+
 
 		//Debug.Log(Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag ("Enviroment").transform.position));
 		if(Input.GetButtonUp("Vertical"))
@@ -98,29 +114,27 @@ public class PlayerMovements : MonoBehaviour {
 
 		verMovement = Input.GetAxisRaw ("Vertical");
 		if (rotated) {
-			transform.Rotate (0, -1 * Input.GetAxisRaw ("Horizontal"), 0);
+			if (!enventoryOn) {
+				transform.Rotate (0, (-1 * Input.GetAxisRaw ("Horizontal")) * 1.2f, 0);
+			}
 			verMovement = verMovement * -1;
 		} else {
-			transform.Rotate(0,Input.GetAxisRaw ("Horizontal"),0);
+			if (!enventoryOn) {
+				transform.Rotate(0,(Input.GetAxisRaw ("Horizontal"))*1.2f,0);
+			}
+		}
+
+		if (enventoryOn) {
+			verMovement = 0f;
+			speed = 0f;
+			moveAmount = Vector3.zero;
 		}
 		Vector3 moveDirection = new Vector3 (0, 0, verMovement).normalized;
 		Vector3 targetMoveAmount = moveDirection * speed;
-
-	
 		moveAmount = Vector3.SmoothDamp (moveAmount, targetMoveAmount, ref smoothAmount, .15f);
 
-		if (Input.GetMouseButtonUp (0) && cpuCollided && enventoryOn==false) {
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			RaycastHit hit;
-			if(Physics.Raycast(ray, out hit)){
-				if(hit.transform.name == cpuName)
-				{
-					Debug.Log (cpuName);
-					//Do inteaction here!
-					//or call a function on the other object
-				}
-			}
-		}
+
+
 	}
 	void FixedUpdate(){
 		GetComponent<Rigidbody> ().MovePosition (GetComponent<Rigidbody> ().position + transform.TransformDirection (moveAmount) * Time.fixedDeltaTime);
