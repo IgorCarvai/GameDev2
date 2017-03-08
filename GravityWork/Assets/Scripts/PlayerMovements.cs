@@ -27,7 +27,12 @@ public class PlayerMovements : MonoBehaviour {
 	public GameObject E;
 	private GameObject tooltip;
 	public GameObject craftSystem;
+	public Animator playerAnim;
 
+
+	void Start (){
+		playerAnim = GetComponent<Animator>();
+	}
 
 	void toggleInventory(){
 		if (E.activeSelf && !Input.GetMouseButton(0)) {
@@ -131,6 +136,11 @@ public class PlayerMovements : MonoBehaviour {
 		}
 		Vector3 moveDirection = new Vector3 (0, 0, verMovement).normalized;
 		Vector3 targetMoveAmount = moveDirection * speed;
+		if (targetMoveAmount == Vector3.zero) {
+			playerAnim.Play ("idle");
+		} else {
+			playerAnim.Play ("Run");
+		}
 		moveAmount = Vector3.SmoothDamp (moveAmount, targetMoveAmount, ref smoothAmount, .15f);
 
 
