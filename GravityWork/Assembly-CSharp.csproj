@@ -78,7 +78,7 @@
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>D:/GameDev2/GravityWork/Assets/Plugins/LitJson.dll</HintPath>
+ <HintPath>D:/GameDev2Rep/GameDev2/GravityWork/Assets/Plugins/LitJson.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

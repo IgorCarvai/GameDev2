@@ -120,12 +120,12 @@ public class PlayerMovements : MonoBehaviour {
 		verMovement = Input.GetAxisRaw ("Vertical");
 		if (rotated) {
 			if (!enventoryOn) {
-				transform.Rotate (0, (-1 * Input.GetAxisRaw ("Horizontal")) * 1.2f, 0);
+				transform.Rotate (0, (-1 * Input.GetAxisRaw ("Horizontal")) * 1.6f, 0);
 			}
 			verMovement = verMovement * -1;
 		} else {
 			if (!enventoryOn) {
-				transform.Rotate(0,(Input.GetAxisRaw ("Horizontal"))*1.2f,0);
+				transform.Rotate(0,(Input.GetAxisRaw ("Horizontal"))*1.6f,0);
 			}
 		}
 
