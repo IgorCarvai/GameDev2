@@ -27,7 +27,12 @@ public class PlayerMovements : MonoBehaviour {
 	public GameObject E;
 	private GameObject tooltip;
 	public GameObject craftSystem;
+	public Animator playerAnim;
 
+
+	void Start (){
+		playerAnim = GetComponent<Animator>();
+	}
 
 	void toggleInventory(){
 		if (E.activeSelf && !Input.GetMouseButton(0)) {
@@ -115,12 +120,12 @@ public class PlayerMovements : MonoBehaviour {
 		verMovement = Input.GetAxisRaw ("Vertical");
 		if (rotated) {
 			if (!enventoryOn) {
-				transform.Rotate (0, (-1 * Input.GetAxisRaw ("Horizontal")) * 1.2f, 0);
+				transform.Rotate (0, (-1 * Input.GetAxisRaw ("Horizontal")) * 1.6f, 0);
 			}
 			verMovement = verMovement * -1;
 		} else {
 			if (!enventoryOn) {
-				transform.Rotate(0,(Input.GetAxisRaw ("Horizontal"))*1.2f,0);
+				transform.Rotate(0,(Input.GetAxisRaw ("Horizontal"))*1.6f,0);
 			}
 		}
 
@@ -131,6 +136,11 @@ public class PlayerMovements : MonoBehaviour {
 		}
 		Vector3 moveDirection = new Vector3 (0, 0, verMovement).normalized;
 		Vector3 targetMoveAmount = moveDirection * speed;
+		if (targetMoveAmount == Vector3.zero) {
+			playerAnim.Play ("idle");
+		} else {
+			playerAnim.Play ("Run");
+		}
 		moveAmount = Vector3.SmoothDamp (moveAmount, targetMoveAmount, ref smoothAmount, .15f);
 
 
