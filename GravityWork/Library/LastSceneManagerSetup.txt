@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/GameDev2V.0.0.0.1.unity
+- path: Assets/Scene/Tutorial.unity
   isLoaded: 1
   isActive: 1

@@ -33,7 +33,6 @@ public class Ingredient : MonoBehaviour, IDropHandler
         {
             ItemData.draggedItem.transform.SetParent(transform);
         }
-
         else //swap from inventory to crafting, just switch places
         {
             //swap info and places
@@ -55,11 +54,6 @@ public class Ingredient : MonoBehaviour, IDropHandler
         {
             CraftingSystem.toMake.Add(droppedItem.item.Slug, droppedItem.amount);
             Debug.Log(droppedItem.item.Slug + " " + droppedItem.amount);
-        }
-
-        else if (CraftingSystem.toMake.ContainsKey(droppedItem.item.Slug))
-        {
-            droppedItem.amount += droppedItem.amount;
         }
     }
     #endregion

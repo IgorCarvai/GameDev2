@@ -8,30 +8,35 @@ using UnityEngine;
 /// Code adapted from Sebastian Lague
 /// </summary>
 public class PlayerMovements : MonoBehaviour {
+	
+	private GameObject tooltip;
+	public GameObject E;
+	public GameObject craftSystem;
+	public Animator anim;
 
+	public float walkSpeed = 2;
+	public float runSpeed = 6;
+	public float turnSmoothTime = .2f;
+	public float speedSmoothTime =.1f;
 
-	Vector3 moveAmount;
-	Vector3 smoothAmount;
-	bool canRotate=true;
-	bool rotated=false;
+	float turnSmoothVelocity;
+	float speedSmoothVelocity;
+	float currentSpeed;
+	float reset =0;
+	float buttonPressed=0;
+
 	bool start = true;
 	bool cpuCollided = false;
 	bool enventoryOn=false;
-	float verMovement;
-	float speed;
-	float buttonPressed=0;
-	float reset=0;
+
 	string cpuName;
-	public float walkSpeed = 8;
-	public float runSpeed = 16;
-	public GameObject E;
-	private GameObject tooltip;
-	public GameObject craftSystem;
-	public Animator playerAnim;
 
+	bool running = false;
+	Transform cameraT;
 
-	void Start (){
-		playerAnim = GetComponent<Animator>();
+	void Start(){
+		cameraT = Camera.main.transform;
+		anim = GetComponent<Animator>();
 	}
 
 	void toggleInventory(){
@@ -50,15 +55,12 @@ public class PlayerMovements : MonoBehaviour {
 	}
 	void toggleCraft(){
 		if (cpuCollided) {
-
 			if (craftSystem.activeSelf) {
 				craftSystem.SetActive (false);
 			} else {
 				craftSystem.SetActive (true);
 			}
-
 		}
-
 	}
 	void Update(){
 		if (start) {
@@ -71,43 +73,24 @@ public class PlayerMovements : MonoBehaviour {
 			toggleCraft ();
 		}
 
+		Vector2 input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
+		Vector2 inputDir = input.normalized;
 
-		//Debug.Log(Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag ("Enviroment").transform.position));
-		if(Input.GetButtonUp("Vertical"))
-			canRotate=true;
+		if (inputDir != Vector2.zero) {
+			float targetRotation = Mathf.Atan2 (inputDir.x, inputDir.y) * Mathf.Rad2Deg + cameraT.eulerAngles.y;
+			//transform.eulerAngles = Vector3.left * Mathf.SmoothDampAngle (transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
+		}
 
-		if ((Input.GetAxisRaw ("Vertical") < 0) && canRotate && !rotated) {
-			if (rotated) {
-				rotated = false;
-			} else {
-				rotated = true;
-			}
-			var player = GameObject.FindGameObjectWithTag ("Player").transform;
-			transform.FindChild ("Main Camera").transform.parent = null;
-			transform.Rotate(0,180,0);
-			canRotate = false;
-			GameObject.FindGameObjectWithTag ("MainCamera").transform.parent = player;
-		}
-		if ((Input.GetAxisRaw ("Vertical") > 0) && canRotate && rotated) {
-			if (rotated) {
-				rotated = false;
-			} else {
-				rotated = true;
-			}
-			var player = GameObject.FindGameObjectWithTag ("Player").transform;
-			transform.FindChild ("Main Camera").transform.parent = null;
-			transform.Rotate(0,180,0);
-			canRotate = false;
-			GameObject.FindGameObjectWithTag ("MainCamera").transform.parent = player;
-		}
-		if (Input.GetAxisRaw ("Vertical") == 0)
-				speed = walkSpeed;
 		if (Input.GetButtonDown ("Vertical")) {
 			if (reset > 0 && buttonPressed == 1) {
-				speed = runSpeed;
+				running = true;
 			} else {
 				reset = .5f;
 				buttonPressed += 1;
+			}
+		} else {
+			if (Input.GetAxisRaw ("Vertical") == 0) {
+				running = false;
 			}
 		}
 		if (reset > 0) {
@@ -115,39 +98,15 @@ public class PlayerMovements : MonoBehaviour {
 		} else {
 			buttonPressed = 0;
 		}
-			
+		float targetSpeed = ((running) ? runSpeed : walkSpeed) * inputDir.magnitude;
+		currentSpeed = Mathf.SmoothDamp (currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
 
-		verMovement = Input.GetAxisRaw ("Vertical");
-		if (rotated) {
-			if (!enventoryOn) {
-				transform.Rotate (0, (-1 * Input.GetAxisRaw ("Horizontal")) * 1.6f, 0);
-			}
-			verMovement = verMovement * -1;
+		transform.Translate (transform.forward * currentSpeed * Time.deltaTime, Space.World);
+		if (currentSpeed == 0) {
+			anim.Play ("idle");
 		} else {
-			if (!enventoryOn) {
-				transform.Rotate(0,(Input.GetAxisRaw ("Horizontal"))*1.6f,0);
-			}
+			anim.Play ("Run");
 		}
-
-		if (enventoryOn) {
-			verMovement = 0f;
-			speed = 0f;
-			moveAmount = Vector3.zero;
-		}
-		Vector3 moveDirection = new Vector3 (0, 0, verMovement).normalized;
-		Vector3 targetMoveAmount = moveDirection * speed;
-		if (targetMoveAmount == Vector3.zero) {
-			playerAnim.Play ("idle");
-		} else {
-			playerAnim.Play ("Run");
-		}
-		moveAmount = Vector3.SmoothDamp (moveAmount, targetMoveAmount, ref smoothAmount, .15f);
-
-
-
-	}
-	void FixedUpdate(){
-		GetComponent<Rigidbody> ().MovePosition (GetComponent<Rigidbody> ().position + transform.TransformDirection (moveAmount) * Time.fixedDeltaTime);
 	}
 	void OnTriggerExit(Collider col){
 		if (col.gameObject.tag == "CPU") {
@@ -160,5 +119,6 @@ public class PlayerMovements : MonoBehaviour {
 			cpuName = col.gameObject.name;
 		}
 	}
+
 
 }

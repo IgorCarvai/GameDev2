@@ -48,25 +48,25 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		public void Move(Vector3 move,  bool jump)
 		{
+			
+				// convert the world relative moveInput vector into a local-relative
+				// turn amount and forward amount required to head in the desired
+				// direction.
+				//if (move.magnitude > 1f) move.Normalize();
 
-			// convert the world relative moveInput vector into a local-relative
-			// turn amount and forward amount required to head in the desired
-			// direction.
-			//if (move.magnitude > 1f) move.Normalize();
+				//Debug.Log ("move :" + move);
+				//move = transform.InverseTransformDirection(move);
+				m_IsGrounded = true;
+				m_Animator.applyRootMotion = true;
 
-			//Debug.Log ("move :" + move);
-			//move = transform.InverseTransformDirection(move);
-			m_IsGrounded = true;
-			m_Animator.applyRootMotion = true;
+				m_TurnAmount = move.x;//Mathf.Atan2(move.x, move.z);
+				m_ForwardAmount = move.z;
 
-			m_TurnAmount = move.x;//Mathf.Atan2(move.x, move.z);
-			m_ForwardAmount = move.z;
+				ApplyExtraTurnRotation ();
 
-			ApplyExtraTurnRotation ();
+				UpdateAnimator (move);
 
-			UpdateAnimator (move);
-
-
+			
 		}
 
 

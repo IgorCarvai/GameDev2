@@ -8,7 +8,6 @@ public class Slot : MonoBehaviour, IDropHandler {
     public int id;
     private Inventory inv;
 
-
     void Start()
     {
         inv = GameObject.Find("Inventory").GetComponent<Inventory>();
@@ -17,6 +16,7 @@ public class Slot : MonoBehaviour, IDropHandler {
     public void OnDrop(PointerEventData eventData)
     {
         ItemData droppedItem = eventData.pointerDrag.GetComponent<ItemData>();
+
         if (inv.items[id].ID == -1 && this.transform.childCount < 1)  //no item in this slot
         {
             //clean up old slot before making new ones
@@ -42,10 +42,10 @@ public class Slot : MonoBehaviour, IDropHandler {
         }
 
         if (droppedItem.transform.parent != ItemData.startParent) //if return craft item to inventory, remove from craft and return to inv list
-        {
+		{
             CraftingSystem.toMake.Remove(droppedItem.item.Slug);
             inv.items.Add(droppedItem.item);
-        }
+		}
     }
 
 }
