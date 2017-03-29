@@ -1,50 +1,23 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Slot.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TutorialScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\itemPickUp.cs" Line="123" Column="1" />
+      <File FileName="Assets\Scripts\itemPickUp.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Gravity.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GravityBody.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MenuScript.cs" Line="21" Column="26" />
+      <File FileName="Assets\Scripts\MenuScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Inventory.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ClickCraft.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ClickCraft.cs" Line="42" Column="10" />
       <File FileName="Assets\Scripts\Ingredient.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemDatabase.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemData.cs" Line="52" Column="6" />
-      <File FileName="Assets\Scripts\Slot.cs" Line="16" Column="51" />
+      <File FileName="Assets\Scripts\Slot.cs" Line="16" Column="33" />
       <File FileName="Assets\Scripts\ThirdPersonCamera.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\OldPlayerMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" Line="58" Column="27" />
-      <File FileName="Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" Line="77" Column="31" />
-      <File FileName="Assets\Scripts\TutorialScript.cs" Line="34" Column="30" />
+      <File FileName="Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" Line="72" Column="16" />
+      <File FileName="Assets\Scripts\TutorialScript.cs" Line="23" Column="3" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="GravityWork" expanded="True">
-            <Node name="Assembly-CSharp" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="Slot.cs" selected="True" />
-              </Node>
-            </Node>
-            <Node name="Assembly-CSharp-firstpass" expanded="True">
-              <Node name="Standard Assets" expanded="True">
-                <Node name="Characters" expanded="True">
-                  <Node name="ThirdPersonCharacter" expanded="True">
-                    <Node name="Scripts" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State name="__root__">
-          <Node name="GravityWork" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
