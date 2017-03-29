@@ -106,15 +106,8 @@ public class itemPickUp : MonoBehaviour {
                 make the thing, put item data on it and destroy the items*/
 
 			//instantiate object
-			GameObject done = Instantiate (itemp) as GameObject;
-			done.GetComponent<ItemData> ().item = inv.database.FetchItemByID (ID);
-			done.GetComponent<ItemData> ().amount = 1;
-			done.transform.SetParent (craftSlot.transform);
-			done.transform.position = craftSlot.transform.position;
-			done.GetComponent<Image> ().sprite = inv.database.FetchItemByID (ID).Sprite;
-			done.name = inv.database.FetchItemByID (ID).Title;
+            inv.AddItem(ID);
 
-			inv.items.Add (item);
 			Destroy (this.gameObject);
 		}
 	}
