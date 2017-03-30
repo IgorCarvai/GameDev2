@@ -6,14 +6,14 @@ using System.IO;
 
 public class ItemDatabase : MonoBehaviour {
 
-    private List<Item> database = new List<Item>();
+    public List<Item> database = new List<Item>();
     private JsonData itemData;
 
     void Start()
     {
         itemData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/Items.json"));
         ConstructItemDatabase();
-        
+
         //Debug.Log(FetchItemByID(35).Ingredients["steel"]);
        
     }

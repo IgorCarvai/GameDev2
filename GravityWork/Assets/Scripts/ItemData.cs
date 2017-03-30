@@ -12,6 +12,7 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public int slot;
     public Vector3 originalPos;
     public static Transform startParent;
+    public bool isDraggable = false;
 
     public static Inventory inv;
     public static CraftingSystem craft;
@@ -28,41 +29,50 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (item != null)
+        if (isDraggable == true)
         {
-            originalPos = this.transform.position;
-            startParent = this.transform.parent.parent;
-            draggedItem = gameObject;
-            GetComponent<CanvasGroup>().blocksRaycasts = false;
-            draggedItem.GetComponent<LayoutElement>().ignoreLayout = true;
-            draggedItem.transform.SetParent(draggedItem.transform.parent.parent);
+            if (item != null)
+            {
+                originalPos = this.transform.position;
+                startParent = this.transform.parent.parent;
+                draggedItem = gameObject;
+                GetComponent<CanvasGroup>().blocksRaycasts = false;
+                draggedItem.GetComponent<LayoutElement>().ignoreLayout = true;
+                draggedItem.transform.SetParent(draggedItem.transform.parent.parent);
+            }
         }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (item != null)
+        if (isDraggable == true)
         {
-            //x, y of mouse
-            this.transform.position = eventData.position;
+            if (item != null)
+            {
+                //x, y of mouse
+                this.transform.position = eventData.position;
+            }
         }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //if dropped in inventory / original parent, item start parent
-        if (this.transform.parent == startParent)
+        if (isDraggable == true)
         {
-            this.transform.SetParent(inv.slots[slot].transform);
-            this.transform.position = inv.slots[slot].transform.position;
-        }
-        else //clean the slot
-        {
-            inv.items[slot] = new Item();
-        }
+            //if dropped in inventory / original parent, item start parent
+            if (this.transform.parent == startParent)
+            {
+                this.transform.SetParent(inv.slots[slot].transform);
+                this.transform.position = inv.slots[slot].transform.position;
+            }
+            else //clean the slot
+            {
+                inv.items[slot] = new Item();
+            }
 
-        GetComponent<CanvasGroup>().blocksRaycasts = true;
-        draggedItem.GetComponent<LayoutElement>().ignoreLayout = false;
+            GetComponent<CanvasGroup>().blocksRaycasts = true;
+            draggedItem.GetComponent<LayoutElement>().ignoreLayout = false;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)

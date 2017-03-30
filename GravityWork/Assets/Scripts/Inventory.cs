@@ -46,6 +46,9 @@ public class Inventory : MonoBehaviour{
         AddItem(19);
         AddItem(19);
         AddItem(19);
+        AddItem(20); AddItem(20); AddItem(20); AddItem(20); AddItem(20); AddItem(20); AddItem(20);
+        AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13);
+        AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32);
     }
 
     public void AddItem(int id)
