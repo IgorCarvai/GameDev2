@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Ingredient : MonoBehaviour, IDropHandler
 {
-    public Inventory inv;
+    Inventory inv;
+    CraftingSystem craftS;
     public GameObject item
     {
         get
@@ -22,6 +23,7 @@ public class Ingredient : MonoBehaviour, IDropHandler
     void Start ()
     {
         inv = GetComponent<Inventory>();
+        craftS = GameObject.Find("Inventory").GetComponent<CraftingSystem>();
 
     }
     #region IdropHandler implementation
@@ -33,7 +35,9 @@ public class Ingredient : MonoBehaviour, IDropHandler
         {
             ItemData.draggedItem.transform.SetParent(transform);
         }
-        else //swap from inventory to crafting, just switch places
+
+        else //swap from inventory to crafting, just switch places 
+            //instead: just make a duplicate for drag
         {
             //swap info and places
             Transform item = this.transform.GetChild(0); //put craft item in inv
@@ -54,6 +58,8 @@ public class Ingredient : MonoBehaviour, IDropHandler
         {
             CraftingSystem.toMake.Add(droppedItem.item.Slug, droppedItem.amount);
             Debug.Log(droppedItem.item.Slug + " " + droppedItem.amount);
+
+            craftS.makeThings();
         }
     }
     #endregion
