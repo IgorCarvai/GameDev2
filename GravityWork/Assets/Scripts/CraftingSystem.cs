@@ -53,7 +53,6 @@ public class CraftingSystem : MonoBehaviour {
                                 if (toMake.Count == 1)//put first items recipes in
                                 {
                                     sortList.Add(item.Slug);
-                                    count = 1;
                                 }
 
                                 if (sortList.Contains(item.Slug) && toMake.Count > 1 && count < toMake.Count)
@@ -75,17 +74,16 @@ public class CraftingSystem : MonoBehaviour {
                         done.GetComponent<ItemData>().item = inv.database.FetchItemByID(craftItem.ID);
                         done.GetComponent<ItemData>().amount = 1;
                         done.transform.SetParent(craftSlot.transform);
+                        done.GetComponent<ItemData>().isDraggable = false;
                         done.transform.position = craftSlot.transform.position;
                         done.GetComponent<Image>().sprite = inv.database.FetchItemByID(craftItem.ID).Sprite;
                         done.GetComponent<Image>().color = new Color(1f, 1f, 1f, .5f);
-                        done.GetComponent<ItemData>().isDraggable = false;
 
                         return;
                     }
 
                     else if (count != toMake.Count && craftSlot.transform.childCount > 0)
                     {
-                        Debug.Log("hello");
                         Destroy(craftSlot.transform.GetChild(0).gameObject);
                         sortList.Clear();
                     }

@@ -86,4 +86,9 @@ public class ClickCraft : MonoBehaviour {
         Destroy(craftSlot.transform.GetChild(0).gameObject);
         //craftS.craftItemIng.Clear();
     }
+
+    public void ClearAll()
+    {
+
+    }
 }
