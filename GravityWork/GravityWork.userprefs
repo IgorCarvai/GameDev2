@@ -10,13 +10,15 @@
       <File FileName="Assets\Scripts\ClickCraft.cs" Line="42" Column="10" />
       <File FileName="Assets\Scripts\Ingredient.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemDatabase.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ItemData.cs" Line="52" Column="6" />
+      <File FileName="Assets\Scripts\ItemData.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Slot.cs" Line="16" Column="33" />
-      <File FileName="Assets\Scripts\ThirdPersonCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ThirdPersonCamera.cs" Line="1" Column="26" />
       <File FileName="Assets\Scripts\OldPlayerMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" Line="72" Column="16" />
-      <File FileName="Assets\Scripts\TutorialScript.cs" Line="23" Column="3" />
+      <File FileName="Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" Line="137" Column="29" />
+      <File FileName="Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" Line="16" Column="7" />
+      <File FileName="Assets\Scripts\Dialogue.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TutorialScript.cs" Line="61" Column="4" />
+      <File FileName="Assets\Scripts\NPCDialogue.cs" Line="49" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

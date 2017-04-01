@@ -2,55 +2,69 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialScript : MonoBehaviour {
+public class TutorialScript: MonoBehaviour {
 
 
-	public GameObject MyText;
+	public Transform player;
 	public Inventory inv;
 	public Camera Cam;
 	private string cpuName="";
 	private bool playerCol=false;
+	private GameObject[] texts;
+	private int numText;
+	public NPCDialogue dialogue;
+	bool intro=true;
+	bool findItem=true;
+	bool goodbye=true;
+
 
 	private Vector3 o = new Vector3(-180,0,0);
 	// Use this for initialization
 	void Start () {
 		inv = GameObject.Find("Inventory").GetComponent<Inventory>();
+
+		dialogue = gameObject.GetComponent<NPCDialogue>();
 	}
 	
-	// Update is called once per frame
+	// Update is called once per frame 
 	void Update () {
 
+		Vector3 targetPostition = new Vector3 (player.position.x, 
+			                          this.transform.position.y, 
+			                          player.position.z);
+		this.transform.LookAt (targetPostition);
 
-		MyText.transform.LookAt (Cam.transform.position);
-		MyText.transform.Rotate (0, 180, 0);
 
-		if (cpuName == "Mechanic") {
-			if (Input.GetKeyUp (KeyCode.E) && playerCol == true) {
-				MyText.SetActive (false);
-			}
-		}
-		if (cpuName == "Captain") {
-
-			if (Input.GetKeyUp (KeyCode.E)) {
-				foreach (Item item in inv.items) { //look through entire list of items
-
+		if (Input.GetKeyUp (KeyCode.E) && playerCol == true) {
+			if (intro) {
+				dialogue.checkConditions ();
+				intro = false;
+			} else if (findItem) {
+				foreach (Item item in inv.items) {
 					if (item.Title == "Crystal") {
-
-						Application.LoadLevel(2);
+						dialogue.checkConditions ();
+						findItem = false;
 					}
 				}
+			} else if (goodbye) {
+				Application.LoadLevel (2);
 			}
-		}
 
+		}
+		
 	}
 	void OnTriggerExit(Collider col){
 		if (col.gameObject.tag == "Player") {
+			if(!intro)
+				dialogue.hideText ();
+	
 			playerCol = false;
 			cpuName = "";
 		}
 	}
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "Player") {
+			dialogue.showText ();
 			playerCol = true;
 			cpuName = this.name;
 		}
