@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent (typeof(Rigidbody))]
 public class GravityBody : MonoBehaviour {
 
-	Gravity planet;
+	public Gravity planet;
 
 	void Awake()
 	{
@@ -19,5 +19,9 @@ public class GravityBody : MonoBehaviour {
 
 	void FixedUpdate(){
 		planet.Attract(transform);
+	}
+
+	void OnTriggerEnter(Collider col){
+		planet=col.GetComponent <Gravity>();
 	}
 }
