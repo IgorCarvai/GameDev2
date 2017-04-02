@@ -9,19 +9,19 @@ using UnityEngine;
 public class NPCDialogue : MonoBehaviour
 {
 
-    public static int sceneNumber;
-    public int timeToStrike;
-    public string dialogueLine;
-    public string item, fact;
-    public bool isBuilding = false;
-    public bool built = false;
+	public static int sceneNumber;
+	public int timeToStrike;
+	public string dialogueLine;
+	public string item, fact;
+	public bool isBuilding = false;
+	public bool built = false;
 	private string speaker;
 	private int nextText;
 
 	public Text displayLine;
 	public Text displayPerson;
 
-    private GameObject NPC;
+	private GameObject NPC;
 
     void Start()
     {
@@ -49,6 +49,7 @@ public class NPCDialogue : MonoBehaviour
 		displayLine.enabled = true;
 		displayPerson.enabled = true;
 	}
+	
     public void checkConditions()
     {
         dialogueLine = " ";
@@ -133,6 +134,20 @@ public class NPCDialogue : MonoBehaviour
             countdown in days to that day
             */
         }
+	
+	else if (NPC.tag == "Radio")
+	{
+		if (sceneNumber == 3){
+			dialogueLine = "This is Lt. Sangr speaking. Captain are you there? Capt?" 
+			
+			/*"... Shortly, after your departure, Leader Cerul has terminated your mission." 
+			"We have proof to believe that planet Auroran is dangerous." 
+			"We ask that you take what you've already gathered and return to the empire immediately."*/
+		}
+		else if (sceneNumber == 5){
+			dialogueLine = "";
+		}
+	}
 
         displayLine.text = dialogueLine;
 
