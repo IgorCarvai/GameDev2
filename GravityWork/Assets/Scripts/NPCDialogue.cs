@@ -138,7 +138,7 @@ public class NPCDialogue : MonoBehaviour
 	else if (NPC.tag == "Radio")
 	{
 		if (sceneNumber == 3){
-			dialogueLine = "This is Lt. Sangr speaking. Captain are you there? Capt?" 
+				dialogueLine = "This is Lt. Sangr speaking. Captain are you there? Capt?"; 
 			
 			/*"... Shortly, after your departure, Leader Cerul has terminated your mission." 
 			"We have proof to believe that planet Auroran is dangerous." 
