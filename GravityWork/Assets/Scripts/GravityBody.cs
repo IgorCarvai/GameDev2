@@ -6,7 +6,11 @@ using UnityEngine;
 [RequireComponent (typeof(Rigidbody))]
 public class GravityBody : MonoBehaviour {
 
-	public Gravity planet;
+	Gravity planet;
+
+	bool foundT=false;
+	bool foundA=false;
+	bool foundR=false;
 
 	void Awake()
 	{
@@ -18,10 +22,30 @@ public class GravityBody : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		planet.Attract(transform);
+		planet.Attract(transform);	
 	}
 
 	void OnTriggerEnter(Collider col){
-		planet=col.GetComponent <Gravity>();
+		if (col.tag == "Enviroment") {
+			planet = col.gameObject.GetComponent<Gravity> ();
+		}
+	}
+	public void setFoundTangie(bool x){
+		foundT = x;
+	}
+	public void setFoundAlvin(bool x){
+		foundA = x;
+	}
+	public void setFoundRidi(bool x){
+		foundR = x;
+	}
+	public bool FoundRidi(){
+		return foundR;
+	}
+	public bool FoundTangie(){
+		return foundT;
+	}
+	public bool FoundAlvin(){
+		return foundA;
 	}
 }

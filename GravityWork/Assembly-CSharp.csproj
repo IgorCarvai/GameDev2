@@ -46,6 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AngieScript.cs" />
+     <Compile Include="Assets\Scripts\AvinScrpit.cs" />
      <Compile Include="Assets\Scripts\ClickCraft.cs" />
      <Compile Include="Assets\Scripts\CraftingSystem.cs" />
      <Compile Include="Assets\Scripts\Dialogue.cs" />
@@ -64,8 +66,8 @@
      <Compile Include="Assets\Scripts\ThirdPersonCamera.cs" />
      <Compile Include="Assets\Scripts\Tooltip.cs" />
      <Compile Include="Assets\Scripts\TutorialScript.cs" />
+     <Compile Include="Assets\Scripts\idle_followScript.cs" />
      <Compile Include="Assets\Scripts\itemPickUp.cs" />
-     <Compile Include="Assets\idle_followScript.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

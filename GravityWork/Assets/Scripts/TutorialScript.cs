@@ -11,7 +11,7 @@ public class TutorialScript: MonoBehaviour {
 	private string cpuName="";
 	private bool playerCol=false;
 	private GameObject[] texts;
-	private int numText;
+	private int numText = 1;
 	public NPCDialogue dialogue;
 	bool intro=true;
 	bool findItem=true;
@@ -37,12 +37,14 @@ public class TutorialScript: MonoBehaviour {
 
 		if (Input.GetKeyUp (KeyCode.E) && playerCol == true) {
 			if (intro) {
-				dialogue.checkConditions ();
+				numText++;
+				dialogue.checkConditions (999,numText);
 				intro = false;
 			} else if (findItem) {
 				foreach (Item item in inv.items) {
 					if (item.Title == "Crystal") {
-						dialogue.checkConditions ();
+						numText++;
+						dialogue.checkConditions (999,numText);
 						findItem = false;
 					}
 				}
