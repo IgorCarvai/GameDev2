@@ -9,67 +9,74 @@ using UnityEngine;
 public class NPCDialogue : MonoBehaviour
 {
 
-	public static int sceneNumber;
-	public int timeToStrike;
-	public string dialogueLine;
-	public string item, fact;
-	public bool isBuilding = false;
-	public bool built = false;
-	private string speaker;
-	private int nextText;
+    public static int sceneNumber;
+    public int timeToStrike;
+    public string dialogueLine;
+    public string item, fact;
+    public bool isBuilding = false;
+    public bool built = false;
+    private string speaker;
+    private int nextText;
 
-	public Text displayLine;
-	public Text displayPerson;
+    public Text displayLine;
+    public Text displayPerson;
 
-	private GameObject NPC;
+    private GameObject NPC;
 
     void Start()
     {
         NPC = this.gameObject;
-		displayLine = GameObject.FindWithTag("Character Dialogue").GetComponent<Text>();
-		displayPerson = GameObject.Find("Speaker").GetComponent<Text>();
+        displayLine = GameObject.FindWithTag("Character Dialogue").GetComponent<Text>();
+        displayPerson = GameObject.Find("Speaker").GetComponent<Text>();
 
-		sceneNumber = Application.loadedLevel;
-		nextText = 1;
+        sceneNumber = Application.loadedLevel;
+        nextText = 1;
 
-		dialogueLine = " ";
-		speaker = " ";
-		displayLine.text = dialogueLine;
-		displayPerson.text = speaker;
+        dialogueLine = " ";
+        speaker = " ";
+        displayLine.text = dialogueLine;
+        displayPerson.text = speaker;
     }
 
-	public void hideText(){
-		displayLine.enabled = false;
-		displayPerson.enabled = false;
-	}
-	public void showText(){
+    public void hideText()
+    {
+        displayLine.enabled = false;
+        displayPerson.enabled = false;
+    }
+    public void showText()
+    {
 
-		displayLine.enabled = true;
-		displayPerson.enabled = true;
-	}
-	public void checkConditions(int player, int textNumber)
-	{
-		if (player == 1) {
-			speaker = "Avin";
-		} else if (player == 2) {
-			speaker = "Ridi";
-		} else if (player == 3) {
-			speaker = "Tangie";
-		}
+        displayLine.enabled = true;
+        displayPerson.enabled = true;
+    }
+    public void checkConditions(int player, int textNumber)
+    {
+        if (player == 1)
+        {
+            speaker = "Avin";
+        }
+        else if (player == 2)
+        {
+            speaker = "Ridi";
+        }
+        else if (player == 3)
+        {
+            speaker = "Tangie";
+        }
         dialogueLine = " ";
-		if (speaker == "Avin")
+        if (speaker == "Avin")
         {
             if (sceneNumber == 2)//world after prologue
             {
-				if(textNumber==1)
-	                dialogueLine = "I was looking all over for you.";
-				if(textNumber==2)
-					dialogueLine = "Go and find the others, i'll meet u at the base";
-				if (textNumber == 3)
-					dialogueLine = "You still havent found anyone else.";
-				if(textNumber==4)
-					dialogueLine = "We are still mising Ridi";
-					
+                if (textNumber == 1)
+                    dialogueLine = "I was looking all over for you.";
+                if (textNumber == 2)
+                    dialogueLine = "Go and find the others, i'll meet u at the base";
+                if (textNumber == 3)
+                    dialogueLine = "You still havent found anyone else.";
+                if (textNumber == 4)
+                    dialogueLine = "We are still mising Ridi";
+
             }
             else if (sceneNumber >= 4)//inside spaceship
             {
@@ -81,7 +88,7 @@ public class NPCDialogue : MonoBehaviour
             }
         }
 
-		else if (speaker == "Ridi")
+        else if (speaker == "Ridi")
         {
             if (sceneNumber == 3)//world after prologue
             {
@@ -97,18 +104,18 @@ public class NPCDialogue : MonoBehaviour
             }
         }
 
-		else if (speaker == "Tangie")
+        else if (speaker == "Tangie")
         {
             if (sceneNumber == 2)//world after prologue
             {
-				if(textNumber==1)
-	                dialogueLine = "I could've got myself out if you let me.";
-				if(textNumber==2)
-					dialogueLine = "Did you find the other yet? No? Then what are you still doing here? I'll meet you at base when u do.";
-				if (textNumber == 3)
-					dialogueLine = "I'm busy here since no one is around. Hurry up and find the others.";
-				if(textNumber==4)
-					dialogueLine = "We are still mising Ridi";
+                if (textNumber == 1)
+                    dialogueLine = "I could've got myself out if you let me.";
+                if (textNumber == 2)
+                    dialogueLine = "Did you find the other yet? No? Then what are you still doing here? I'll meet you at base when u do.";
+                if (textNumber == 3)
+                    dialogueLine = "I'm busy here since no one is around. Hurry up and find the others.";
+                if (textNumber == 4)
+                    dialogueLine = "We are still mising Ridi";
             }
             else if (sceneNumber >= 4 && !isBuilding)//inside spaceship
             {
@@ -135,40 +142,43 @@ public class NPCDialogue : MonoBehaviour
         else if (NPC.tag == "Scientist")
         {
 
-			if (sceneNumber == 1){
+            if (sceneNumber == 1)
+            {
 
-				if(textNumber==1)
-					dialogueLine = "Hey Firend, come over and talk to me. you can interactive with me by pressing E";
+                if (textNumber == 1)
+                    dialogueLine = "Hey Firend, come over and talk to me. you can interactive with me by pressing E";
 
-				if(textNumber==2)
-					dialogueLine = "GoodJob, go over and get that crystal adn talk to me after";
-				
-				if(textNumber==3)
-					dialogueLine = "Great! now lets get going. Press E to leave";	
-			}
+                if (textNumber == 2)
+                    dialogueLine = "GoodJob, go over and get that crystal adn talk to me after";
+
+                if (textNumber == 3)
+                    dialogueLine = "Great! now lets get going. Press E to leave";
+            }
             /*
             check the world time in comparison to days left, let's say on day 5 thing will strike
             countdown in days to that day
             */
         }
-	
-	else if (NPC.tag == "Radio")
-	{
-		if (sceneNumber == 3){
-				dialogueLine = "This is Lt. Sangr speaking. Captain are you there? Capt?" ;
-			
-			/*"... Shortly, after your departure, Leader Cerul has terminated your mission." 
-			"We have proof to believe that planet Auroran is dangerous." 
-			"We ask that you take what you've already gathered and return to the empire immediately."*/
-		}
-		else if (sceneNumber == 5){
-			dialogueLine = "";
-		}
-	}
+
+        else if (NPC.tag == "Radio")
+        {
+            if (sceneNumber == 3)
+            {
+                dialogueLine = "This is Lt. Sangr speaking. Captain are you there? Capt?";
+
+                /*"... Shortly, after your departure, Leader Cerul has terminated your mission." 
+                "We have proof to believe that planet Auroran is dangerous." 
+                "We ask that you take what you've already gathered and return to the empire immediately."*/
+            }
+            else if (sceneNumber == 5)
+            {
+                dialogueLine = "";
+            }
+        }
 
         displayLine.text = dialogueLine;
 
-		displayPerson.text = speaker;
+        displayPerson.text = speaker;
 
     }
 }
