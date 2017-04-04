@@ -60,6 +60,7 @@ public class AngieScript : MonoBehaviour {
 				hastped = true;
 				transform.position = new Vector3 (-49.57f, 471.54f, 28f);
 				transform.eulerAngles = new Vector3 (-1.26f, 35.45f, 11.6f);
+				gameObject.GetComponent<SphereCollider>().radius=7;
 			}
 		}
 

@@ -76,6 +76,8 @@ public class NPCDialogue : MonoBehaviour
                     dialogueLine = "You still havent found anyone else.";
                 if (textNumber == 4)
                     dialogueLine = "We are still mising Ridi";
+				if (textNumber == 5)
+					dialogueLine = "Find Angie then come here.";
 
             }
             else if (sceneNumber >= 4)//inside spaceship
@@ -90,9 +92,18 @@ public class NPCDialogue : MonoBehaviour
 
         else if (speaker == "Ridi")
         {
-            if (sceneNumber == 3)//world after prologue
+            if (sceneNumber == 2)//world after prologue
             {
-                dialogueLine = "-happy as can be~ Oh hey Cappy!";
+				if (textNumber == 1)
+					dialogueLine = "-happy as can be~ Oh hey Cappy!";
+				if (textNumber == 2)
+					dialogueLine = "Good Luck Fidining others.";
+				if (textNumber == 3)
+					dialogueLine = "Oh dear I hope they aren't lost";
+				if (textNumber == 4)
+					dialogueLine = "Wheres Angie?";
+				if (textNumber == 5)
+					dialogueLine = "Alvin is always left behind.";
             }
             else if (sceneNumber >= 4)//inside spaceship
             {
@@ -116,6 +127,8 @@ public class NPCDialogue : MonoBehaviour
                     dialogueLine = "I'm busy here since no one is around. Hurry up and find the others.";
                 if (textNumber == 4)
                     dialogueLine = "We are still mising Ridi";
+				if (textNumber == 5)
+					dialogueLine = "We need the whole team. Go find Alvin quick!";
             }
             else if (sceneNumber >= 4 && !isBuilding)//inside spaceship
             {
