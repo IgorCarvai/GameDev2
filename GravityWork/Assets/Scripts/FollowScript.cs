@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FollowScript : MonoBehaviour {
 	public Transform player;
-	public int x, y, z;
 	// Use this for initialization
 	void Start () {
 		
@@ -12,7 +11,10 @@ public class FollowScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.LookAt(transform.position + player.rotation * Vector3.forward,
-			player.rotation * Vector3.up);
+		if (this.tag == "Character Dialogue") {
+			transform.LookAt (transform.position + player.rotation * Vector3.forward, player.rotation * Vector3.up);
+		} else {
+			transform.LookAt (player.transform, player.rotation * Vector3.up);
+		}
 	}
 }

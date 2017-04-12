@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\NPCDialogue.cs" />
      <Compile Include="Assets\Scripts\OldModifiedPlayerMovements.cs" />
      <Compile Include="Assets\Scripts\OldPlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\PilotTutorial.cs" />
      <Compile Include="Assets\Scripts\PlayerMovements.cs" />
      <Compile Include="Assets\Scripts\RidiScript.cs" />
      <Compile Include="Assets\Scripts\ShipScript.cs" />

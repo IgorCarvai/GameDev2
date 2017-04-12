@@ -1,17 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Inventory.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GravityBody.cs">
     <Files>
-      <File FileName="Assets\Scripts\ClickCraft.cs" Line="27" Column="3" />
-      <File FileName="Assets\Scripts\TutorialScript.cs" Line="85" Column="28" />
-      <File FileName="Assets\Scripts\NPCDialogue.cs" Line="68" Column="23" />
-      <File FileName="Assets\Scripts\GravityBody.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\RidiScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ClickCraft.cs" Line="28" Column="1" />
+      <File FileName="Assets\Scripts\TutorialScript.cs" Line="23" Column="26" />
+      <File FileName="Assets\Scripts\NPCDialogue.cs" Line="104" Column="36" />
+      <File FileName="Assets\Scripts\GravityBody.cs" Line="25" Column="15" />
+      <File FileName="Assets\Scripts\RidiScript.cs" Line="56" Column="17" />
       <File FileName="Assets\Scripts\AngieScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\FollowScript.cs" Line="16" Column="10" />
-      <File FileName="Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\itemPickUp.cs" Line="126" Column="4" />
-      <File FileName="Assets\Scripts\Inventory.cs" Line="74" Column="50" />
+      <File FileName="Assets\Scripts\itemPickUp.cs" Line="125" Column="21" />
+      <File FileName="Assets\Scripts\Inventory.cs" Line="100" Column="19" />
+      <File FileName="Assets\Scripts\FollowScript.cs" Line="17" Column="70" />
+      <File FileName="Assets\Scripts\PilotTutorial.cs" Line="20" Column="28" />
+      <File FileName="Assets\Scripts\Dialogue.cs" Line="120" Column="24" />
+      <File FileName="Assets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" Line="23" Column="26" />
+      <File FileName="Assets\Scripts\AvinScrpit.cs" Line="111" Column="14" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,7 +22,7 @@
           <Node name="GravityWork" expanded="True">
             <Node name="Assembly-CSharp" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Inventory.cs" selected="True" />
+                <Node name="GravityBody.cs" selected="True" />
               </Node>
             </Node>
             <Node name="Assembly-CSharp-firstpass" expanded="True">

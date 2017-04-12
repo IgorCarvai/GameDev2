@@ -23,16 +23,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		private GameObject tooltip;
 
 		void toggleInventory(){
-			if (E.activeSelf && !Input.GetMouseButton(0)) {
+			if (E.GetComponent<Canvas>().isActiveAndEnabled && !Input.GetMouseButton(0)) {
 				if (GameObject.Find ("Description")!=null) {
 					tooltip = GameObject.Find ("Description");
 					tooltip.SetActive (false);
 				}
 				enventoryOn = false;
-				E.SetActive(false);
+				E.GetComponent<Canvas>().enabled = false;
 			}
 			else{
-				E.SetActive(true);
+				E.GetComponent<Canvas>().enabled = true;
 				enventoryOn = true;
 			}
 		}
@@ -70,7 +70,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private void Update()
 		{
 			if (start) {
-				E.SetActive (false);
+				E.GetComponent<Canvas>().enabled = false;
 				craftSystem.SetActive (false);
 				start = false;
 			}

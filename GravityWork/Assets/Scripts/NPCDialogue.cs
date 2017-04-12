@@ -70,7 +70,7 @@ public class NPCDialogue : MonoBehaviour
         dialogueLine = " ";
         if (speaker == "Avin")
         {
-            if (sceneNumber == 2)//world after prologue
+            if (sceneNumber == 3)//world after prologue
             {
                 if (textNumber == 1)
                     dialogueLine = "I was looking all over for you.";
@@ -96,12 +96,12 @@ public class NPCDialogue : MonoBehaviour
 
         else if (speaker == "Ridi")
         {
-            if (sceneNumber == 2)//world after prologue
+            if (sceneNumber == 3)//world after prologue
             {
 				if (textNumber == 1)
 					dialogueLine = "-happy as can be~ Oh hey Cappy!";
 				if (textNumber == 2)
-					dialogueLine = "Good Luck Fidining others.";
+					dialogueLine = "Good Luck Finding others.";
 				if (textNumber == 3)
 					dialogueLine = "Oh dear I hope they aren't lost";
 				if (textNumber == 4)
@@ -121,7 +121,7 @@ public class NPCDialogue : MonoBehaviour
 
         else if (speaker == "Tangie")
         {
-            if (sceneNumber == 2)//world after prologue
+            if (sceneNumber == 3)//world after prologue
             {
                 if (textNumber == 1)
                     dialogueLine = "I could've got myself out if you let me.";

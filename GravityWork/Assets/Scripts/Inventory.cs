@@ -97,13 +97,9 @@ public class Inventory : MonoBehaviour{
     {
 		Item itemToDestroy = database.FetchItemByID (id);
 		GameObject item2 = GameObject.Find (itemToDestroy.Title);
-		items.Remove(database.FetchItemByID(id));
-		if (CheckIfItemExists (itemToDestroy)) {
-			
-				Destroy (item2);
-				items.Remove (itemToDestroy);
+		Destroy (item2);
+		items.Remove (itemToDestroy);
 
-		}
     }
 
     bool CheckIfItemExists(Item item)

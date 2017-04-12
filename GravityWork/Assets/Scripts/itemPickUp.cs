@@ -123,7 +123,6 @@ public class itemPickUp : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyUp (KeyCode.E) && playerCol == true) {
 			inv.AddItem (ID);
-
 			Destroy (this.gameObject);
 		}
 	}
