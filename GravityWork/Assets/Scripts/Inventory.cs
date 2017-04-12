@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -95,7 +95,16 @@ public class Inventory : MonoBehaviour{
 
     public void RemoveItem(int id)
     {
-        items.Remove(database.FetchItemByID(id));
+        Item itemToDestroy = database.FetchItemByID(id);
+        
+        if (CheckIfItemExists(itemToDestroy)) 
+        {
+            if (itemToDestroy.transform.parent == inventoryPanel) 
+            {
+            Destroy(Gameobject.Find(itemToDestroy.slug));
+            items.Remove(itemToDestroy);
+            }
+        }
     }
 
     bool CheckIfItemExists(Item item)
