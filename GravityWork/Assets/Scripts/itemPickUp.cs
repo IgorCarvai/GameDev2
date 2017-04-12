@@ -11,6 +11,7 @@ public class itemPickUp : MonoBehaviour {
 	public Item item;
 	int ID;
 	GameObject craftSlot;
+	bool playerCol=false;
 
 	void Start()
 	{
@@ -101,15 +102,29 @@ public class itemPickUp : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "Player") {
-
+			playerCol = true;
 			/*check amount in dragging stack, subract amount needed 
                 make the thing, put item data on it and destroy the items*/
 
 			//instantiate object
-            inv.AddItem(ID);
+        
+		}
+	}
+	void OnTriggerExit(Collider col){
+		if (col.gameObject.tag == "Player") {
+			playerCol = false;
+			/*check amount in dragging stack, subract amount needed 
+                make the thing, put item data on it and destroy the items*/
+
+			//instantiate object
+
+		}
+	}
+	void Update () {
+		if (Input.GetKeyUp (KeyCode.E) && playerCol == true) {
+			inv.AddItem (ID);
 
 			Destroy (this.gameObject);
 		}
 	}
-
 }

@@ -62,7 +62,11 @@ public class NPCDialogue : MonoBehaviour
         else if (player == 3)
         {
             speaker = "Tangie";
-        }
+		} 
+		else if (player == 4)
+		{
+			speaker = "Mechanic";
+		}
         dialogueLine = " ";
         if (speaker == "Avin")
         {
@@ -143,7 +147,31 @@ public class NPCDialogue : MonoBehaviour
                 dialogueLine = "The thing you told me to do? Well it's all done.";
             }
         }
+		else if (speaker == "Mechanic")
+		{
+			if (sceneNumber == 1)
+			{
+				if (textNumber == 1)
+					dialogueLine = "Hey Friend, come over and talk to me. You can interactive with me by pressing the E key.";
 
+				if (textNumber == 2)
+					dialogueLine = "Okay we are almost ready to go. We just need to power up the ship with a crystal. Find one and come talk to me after.";
+
+				if (textNumber == 3)
+					dialogueLine = "Hey, looks like you found it. You can press I to check it out in your inventory.\nAlso since you are near me I can help you build objects. At the moment there is nothing that needs to be built. But go ahead and try to check your inventory.";
+
+				if (textNumber == 4)
+					dialogueLine = "Pretty cool huh. Okay now give me the crystal and I'll put it on the ship.\n(Hint: Press E)";
+
+				if (textNumber == 5)
+					dialogueLine = "We will be all set pretty soon. Go ahead and tell the Pilot that we are all good to go.";
+			}
+
+			/*
+            check the world time in comparison to days left, let's say on day 5 thing will strike
+            countdown in days to that day
+            */
+		}
         else if (NPC.tag == "NPC")
         {
             if (sceneNumber >= 3)
@@ -152,26 +180,7 @@ public class NPCDialogue : MonoBehaviour
             }
         }
 
-        else if (NPC.tag == "Scientist")
-        {
-
-            if (sceneNumber == 1)
-            {
-
-                if (textNumber == 1)
-                    dialogueLine = "Hey Firend, come over and talk to me. you can interactive with me by pressing E";
-
-                if (textNumber == 2)
-                    dialogueLine = "GoodJob, go over and get that crystal adn talk to me after";
-
-                if (textNumber == 3)
-                    dialogueLine = "Great! now lets get going. Press E to leave";
-            }
-            /*
-            check the world time in comparison to days left, let's say on day 5 thing will strike
-            countdown in days to that day
-            */
-        }
+        
 
         else if (NPC.tag == "Radio")
         {
