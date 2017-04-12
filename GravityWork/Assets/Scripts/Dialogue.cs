@@ -23,6 +23,10 @@ public class Dialogue : MonoBehaviour {
         "L: Well, don't just stand there. Get to your escape pods, tykes.",
         "   ",
         "   ",
+	"   ...",
+	"   ...",
+	"S: --is dangerous. We ask that you take what you've already gathered and return to the empire immediately",
+	"L: ...",
         "L: This is your captain speaking. All units report.",
         "L: Role call everyone.",
         "L: Captain Lua here. Anyone who can hear this sound off.", 
@@ -125,7 +129,7 @@ public class Dialogue : MonoBehaviour {
     private IEnumerator StartDialogue()
     {
         int dialogueLength = DialogueStrings.Length;
-        int currentDialogueIndex = 0;
+        int currentDialogueIndex = 1;
 
         while (currentDialogueIndex < dialogueLength || !_isStringBeingRevealed)
         {
@@ -180,6 +184,9 @@ public class Dialogue : MonoBehaviour {
         else if (stringToDisplay.Contains("A:"))
             whoTalking = "Aven";
 
+	else if (stringToDisplay.Contains("S:"))
+            whoTalking = "Lt. Sangr";
+	    
         else
             whoTalking = "";
 
