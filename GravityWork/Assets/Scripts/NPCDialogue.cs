@@ -84,20 +84,20 @@ public class NPCDialogue : MonoBehaviour
 					dialogueLine = "Find Angie then come here.";
 
             }
-            else if (sceneNumber >= 4)//inside spaceship
+            else if (sceneNumber >= 5)//cutscene 2
             {
-                dialogueLine = "Would you like to see the wonders of crafting?";
-            }
-            else if (sceneNumber == 7)//right after empire strike
-            {
-                dialogueLine = "We've prepared for months to come on this mission and they decide to terminate it now? Who gives them the right?";
-            }
+				if(textNumber == 0)
+	                dialogueLine = "Here is what all that we will need: \n105 Steels               60 Screws    40 Coals     32 Wires     \n10 Mirror Shards     10 Cloths     9 Pistons";
+				if (textNumber == 1)
+					dialogueLine = "Here are the recipes: \n15 Wire + 25 Screw + 25 Steel + 3 Piston make the engine. \n10 Screw + 30 Steel + 10 Coal + 2 Piston make the Solid Rocket Booster.\n10 Wire + 15 Screw + 10 Steel + 30 Coal make the Fuel Tank. \n10 Cloth + 15 Steel + 10 Screw make the Radiator.";
+				if (textNumber == 2)
+					dialogueLine = "10 Mirror Shards + 5 Steel + 2 Wire make the Solar Panels. \n4 Piston + 10 Steel make the Thrusters.\n5 Wire + 10 Steel make the Sensors.";  
+			}
         }
 
         else if (speaker == "Ridi")
         {
-            if (sceneNumber == 3)//world after prologue
-            {
+			if (sceneNumber == 3) {//world after prologue
 				if (textNumber == 1)
 					dialogueLine = "-happy as can be~ Oh hey Cappy!";
 				if (textNumber == 2)
@@ -108,15 +108,41 @@ public class NPCDialogue : MonoBehaviour
 					dialogueLine = "Wheres Angie?";
 				if (textNumber == 5)
 					dialogueLine = "Alvin is always left behind.";
-            }
-            else if (sceneNumber >= 4)//inside spaceship
-            {
-                dialogueLine = "You know the " + item + "in your backpack? Well, did you know " + fact + "?";
-            }
-            else if (sceneNumber == 7)//right after empire strike
-            {
-                dialogueLine = "The life here is actually extremely dangerous for our species. You should rethink breathing in this air. .... I'm just pulling your leg. Haha.";
-            }
+			} else if (sceneNumber == 5) {//inside spaceship
+				if (textNumber == 1)
+					dialogueLine = "Parallel Lines have so much in common.";
+				if (textNumber == 2)
+					dialogueLine = "It's a shame they'll never meet.";
+				if (textNumber == 3)
+					dialogueLine = "Man, I can't believe how emotional Mom and Dad's wedding was.";
+				if (textNumber == 4)
+					dialogueLine = "Even the cake was in tiers.";
+				if (textNumber == 5)
+					dialogueLine = "Why do cows wear bells?";
+				if (textNumber == 6)
+					dialogueLine = "Because their horns don't work.";
+				if (textNumber == 7)
+					dialogueLine = "I took the shell out of a snail to see if it would go fasters.";
+				if (textNumber == 8)
+					dialogueLine = "All I did was make it more sluggish.";
+				if (textNumber == 9)
+					dialogueLine = "I used to try and catch fog.";
+				if (textNumber == 10)
+					dialogueLine = "But all I did was mist.";
+				if (textNumber == 11)
+					dialogueLine = "Whats the fastestest way of getting out of a planet?";
+				if (textNumber == 12)
+					dialogueLine = "By finding all the pieces, building the ship and leaving.";
+				if (textNumber == 13)
+					dialogueLine = "Come on, find everything and lets go.";
+				if (textNumber == 14)
+					dialogueLine = "Come on, find everything and lets go.";
+				if (textNumber == 15)
+					dialogueLine = "Please go and find everything so we can leave. \nPleeeeeeeaaaaaaasssseee.";
+				if (textNumber == 16)
+					dialogueLine = "Ugh fine.\nI'll tell you the jokes again.";
+				
+			}
         }
 
         else if (speaker == "Tangie")
@@ -134,18 +160,11 @@ public class NPCDialogue : MonoBehaviour
 				if (textNumber == 5)
 					dialogueLine = "We need the whole team. Go find Alvin quick!";
             }
-            else if (sceneNumber >= 4 && !isBuilding)//inside spaceship
+            else if (sceneNumber == 5 )//inside spaceship
             {
-                dialogueLine = "Did you need something built?";
-            }
-            else if (sceneNumber >= 4 && isBuilding)//inside spaceship
-            {
-                dialogueLine = "Just give me a little more time. ";
-            }
-            else if (sceneNumber >= 4 && built)//right after empire strike
-            {
-                dialogueLine = "The thing you told me to do? Well it's all done.";
-            }
+				if (textNumber >= 1)
+					dialogueLine = "Lets get building.";
+			}
         }
 		else if (speaker == "Mechanic")
 		{

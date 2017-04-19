@@ -58,9 +58,9 @@ public class RidiScript : MonoBehaviour {
 				countdown = false;
 				tpToBase = false;
 				hastped = true;
-				transform.position = new Vector3 (1.72f, 472.66f, -47.06f);
-				transform.eulerAngles = new Vector3 (-4.13f, 113.026f, -8.724f);
-				gameObject.GetComponent<SphereCollider>().radius=7;			
+				transform.position = new Vector3 (-21.8f, 400.6f, -6.4f);
+				transform.eulerAngles = new Vector3 (-5.58f, -266.5f, -1.74f);
+				gameObject.GetComponent<SphereCollider>().radius=6;			
 			}
 		}
 

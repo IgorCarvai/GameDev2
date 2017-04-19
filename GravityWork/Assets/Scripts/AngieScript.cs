@@ -58,9 +58,9 @@ public class AngieScript : MonoBehaviour {
 				countdown = false;
 				tpToBase = false;
 				hastped = true;
-				transform.position = new Vector3 (-49.57f, 471.54f, 28f);
-				transform.eulerAngles = new Vector3 (-1.26f, 35.45f, 11.6f);
-				gameObject.GetComponent<SphereCollider>().radius=7;
+				transform.position = new Vector3 (-85.6f, 379.5f, -6.1f);
+				transform.eulerAngles = new Vector3 (-14.3f, 30.36f, 20.4f);
+				gameObject.GetComponent<SphereCollider>().radius=6;
 			}
 		}
 

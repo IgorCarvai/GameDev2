@@ -59,9 +59,9 @@ public class AvinScrpit : MonoBehaviour {
 				countdown = false;
 				tpToBase = false;
 				hastped = true;
-				transform.position = new Vector3 (-83f, 467.22f, -34.4f);
-				transform.eulerAngles = new Vector3 (0.533f, -24.11f, 18.259f);
-				gameObject.GetComponent<SphereCollider>().radius=7;
+				transform.position = new Vector3 (-52.8f, 372.4f, -78.7f);
+				transform.eulerAngles = new Vector3 (-13.54f, -29.445f, 24.596f);
+				gameObject.GetComponent<SphereCollider>().radius=6;
 			}
 		}
 
