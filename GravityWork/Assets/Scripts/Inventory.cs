@@ -32,23 +32,6 @@ public class Inventory : MonoBehaviour{
             slots[i].transform.SetParent(slotPanel.transform);
         }
 
-        AddItem(0);
-        AddItem(1);
-        AddItem(2);
-        AddItem(3);
-        AddItem(4);
-        AddItem(5);
-        AddItem(6);
-        AddItem(23);
-        AddItem(11);
-        AddItem(11);
-        AddItem(11);
-        AddItem(19);
-        AddItem(19);
-        AddItem(19);
-        AddItem(20); AddItem(20); AddItem(20); AddItem(20); AddItem(20); AddItem(20); AddItem(20);
-        AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13); AddItem(13);
-        AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32); AddItem(32);
     }
 
     public void AddItem(int id)

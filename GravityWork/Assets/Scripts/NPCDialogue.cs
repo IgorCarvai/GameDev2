@@ -89,7 +89,7 @@ public class NPCDialogue : MonoBehaviour
 				if(textNumber == 0)
 	                dialogueLine = "Here is what all that we will need: \n105 Steels               60 Screws    40 Coals     32 Wires     \n10 Mirror Shards     10 Cloths     9 Pistons";
 				if (textNumber == 1)
-					dialogueLine = "Here are the recipes: \n15 Wire + 25 Screw + 25 Steel + 3 Piston make the engine. \n10 Screw + 30 Steel + 10 Coal + 2 Piston make the Solid Rocket Booster.\n10 Wire + 15 Screw + 10 Steel + 30 Coal make the Fuel Tank. \n10 Cloth + 15 Steel + 10 Screw make the Radiator.";
+					dialogueLine = "Here are the recipes: \n15 Wire + 25 Screw + 25 Steel + 3 Piston make the Engine. \n10 Screw + 30 Steel + 10 Coal + 2 Piston make the Solid Rocket Booster.\n10 Wire + 15 Screw + 10 Steel + 30 Coal make the Fuel Tank. \n10 Cloth + 15 Steel + 10 Screw make the Radiator.";
 				if (textNumber == 2)
 					dialogueLine = "10 Mirror Shards + 5 Steel + 2 Wire make the Solar Panels. \n4 Piston + 10 Steel make the Thrusters.\n5 Wire + 10 Steel make the Sensors.";  
 			}

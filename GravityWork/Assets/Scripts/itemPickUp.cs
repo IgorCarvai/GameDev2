@@ -122,7 +122,14 @@ public class itemPickUp : MonoBehaviour {
 	}
 	void Update () {
 		if (Input.GetKeyUp (KeyCode.E) && playerCol == true) {
-			inv.AddItem (ID);
+			
+			if (ID == 4) {
+				for (int i = 0; i < 8; i++) {
+					inv.AddItem (ID);
+				}
+			} else {
+				inv.AddItem (ID);
+			}
 			Destroy (this.gameObject);
 		}
 	}
