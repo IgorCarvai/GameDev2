@@ -326,7 +326,7 @@
 		"description": "It's got lots of teeth!",
 		"ingredients": 
 		{
-			"poop": 1, 
+			"bone": 1, 
 			"steel": 1
 		},
 		"stackable": true,
