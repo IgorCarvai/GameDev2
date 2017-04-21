@@ -7,17 +7,35 @@ public class Tooltip : MonoBehaviour {
     private string data;
     private GameObject tooltip;
 
+
     void Start()
     {
         tooltip = GameObject.Find("Description");
         tooltip.SetActive(false);
+
     }
 
     void Update()
     {
         if (tooltip.activeSelf)
         {
-            tooltip.transform.position = Input.mousePosition;
+            Vector3 pos = Input.mousePosition;
+
+            float distX = 150;
+            float distY = 100;
+
+            if (Input.mousePosition.x + distX > Screen.width)
+            {
+                pos = new Vector3(Input.mousePosition.x - distX, Input.mousePosition.y, Input.mousePosition.z);
+            }
+
+            if (Input.mousePosition.y - distY < 0)
+            {
+                pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y + 75, Input.mousePosition.z);
+            }
+
+            tooltip.transform.position = pos;
+
         }
     }
 
