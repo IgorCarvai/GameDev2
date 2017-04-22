@@ -27,9 +27,7 @@ public class PlayerMovements : MonoBehaviour {
 
 	bool start = true;
 	bool cpuCollided = false;
-	bool enventoryOn=false;
 
-	string cpuName;
 
 	bool running = false;
 	Transform cameraT;
@@ -45,12 +43,10 @@ public class PlayerMovements : MonoBehaviour {
 				tooltip = GameObject.Find ("Description");
 				tooltip.SetActive (false);
 			}
-			enventoryOn = false;
 			E.SetActive(false);
 		}
 		else{
 			E.SetActive(true);
-			enventoryOn = true;
 		}
 	}
 	void toggleCraft(){
@@ -116,7 +112,6 @@ public class PlayerMovements : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "CPU") {
 			cpuCollided = true;
-			cpuName = col.gameObject.name;
 		}
 	}
 

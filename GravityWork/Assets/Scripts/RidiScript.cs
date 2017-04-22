@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RidiScript : MonoBehaviour {
-	private string cpuName="";
 	private bool playerCol=false;
 	private GravityBody planetGravityBody;
 	private Transform playerT;
@@ -93,7 +92,6 @@ public class RidiScript : MonoBehaviour {
 				lookAt = false;
 				dialogue.hideText ();
 				playerCol = false;
-				cpuName = "";
 			}
 		}
 	}
@@ -108,7 +106,6 @@ public class RidiScript : MonoBehaviour {
 				lookAt = true;
 				dialogue.showText ();
 				playerCol = true;
-				cpuName = this.name;
 			}
 
 		}

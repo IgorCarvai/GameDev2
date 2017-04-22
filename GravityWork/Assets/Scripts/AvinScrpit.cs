@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AvinScrpit : MonoBehaviour {
 
-	private string cpuName="";
 	private bool playerCol=false;
 	private GravityBody planetGravityBody;
 	private Transform playerT;
@@ -95,7 +94,6 @@ public class AvinScrpit : MonoBehaviour {
 				lookAt = false;
 				dialogue.hideText ();
 				playerCol = false;
-				cpuName = "";
 			}
 		}
 	}
@@ -109,7 +107,6 @@ public class AvinScrpit : MonoBehaviour {
 				lookAt = true;
 				dialogue.showText ();
 				playerCol = true;
-				cpuName = this.name;
 			}
 
 		}

@@ -11,7 +11,7 @@ public class Gravity : MonoBehaviour {
 	public void Attract(Transform body){
 		Vector3 targetDirection = (body.position - transform.position).normalized;
 
-		if (body.tag == "Player"|| body.tag == "Object"|| body.tag=="NPC") {
+		if (body.tag == "Player"|| body.tag == "Object"|| body.tag=="NPC"|| body.tag=="Decoration") {
 			body.rotation = Quaternion.FromToRotation (body.up, targetDirection) * body.rotation;
 		}
 

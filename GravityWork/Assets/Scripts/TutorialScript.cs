@@ -8,22 +8,18 @@ public class TutorialScript: MonoBehaviour {
 	public Transform player;
 	public Inventory inv;
 	public Camera Cam;
-	private string cpuName="";
 	private bool playerCol=false;
 	private bool foundCrystal = false;
 	private GameObject[] texts;
 	private int numText = 1;
 	public NPCDialogue dialogue;
 	bool intro=true;
-	bool findItem=true;
 	bool goodbye=true;
-	bool tryInventory=true;
 	bool tipPressI=true;
 	public Text Goal1;
 	public GameObject door1;
 	public GameObject door2;
 
-	private Vector3 o = new Vector3(-180,0,0);
 	// Use this for initialization
 	void Start () {
 
@@ -88,14 +84,12 @@ public class TutorialScript: MonoBehaviour {
 				dialogue.hideText ();
 	
 			playerCol = false;
-			cpuName = "";
 		}
 	}
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "Player") {
 			dialogue.showText ();
 			playerCol = true;
-			cpuName = this.name;
 		}
 	}
 }
