@@ -27,12 +27,7 @@
 		"id": 3,
 		"title": "Splint",
 		"description": "Supports squishy human flesh!",
-		"ingredients": 
-		{
-			"cloth": 3,
-			"bone": 1,
-			"wood": 2
-		},
+		"ingredients": {},
 		"stackable": true,
 		"slug": "splint"
 	},
