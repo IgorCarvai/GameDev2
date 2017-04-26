@@ -9,7 +9,6 @@ public class ClickCraft : MonoBehaviour {
 
     int count;
 
-    public bool isClicked = false;
     private Inventory inv;
     private CraftingSystem craftS;
 
@@ -30,65 +29,70 @@ public class ClickCraft : MonoBehaviour {
 
     public void onClick()
     {
-        Debug.Log("button pressed");
-        isClicked = true;
-
         Item craftItem = craftS.craftItem;
 
         /*first, check craftItemIngredients against ingredient slot items
-            compare amounts needed vs currently have
-            then subtract/update amounts
-            if amount = 0, delete from world
-            create item to inventory
+        compare amounts needed vs currently have
+        then subtract/update amounts
+        if amount = 0, delete from world
+        create item to inventory
         */
 
-        /*
-        
-        int updateCount = item.Ingredients[pair.Key];
-        string destroyThis = pair.Key;
-
-        Debug.Log(item.Title + " recipe requires: " + item.Ingredients[pair.Key] + " currently have: " + pair.Value);
-        updateCount = pair.Value - item.Ingredients[pair.Key];
-
-
-        //parsing
-        if (pair.Key.Contains("_"))
+        foreach (KeyValuePair<string, int> finalP in craftItem.Ingredients)
         {
-            destroyThis = pair.Key.Replace("_", " ");
+            foreach (KeyValuePair<string, int> pair in craftItemIng)
+            {
+                if (finalP.Key == pair.Key)
+                {
+                    int updateCount = finalP.Value;
+                    updateCount = pair.Value - finalP.Value;
+
+                    string destroyThis = pair.Key;
+
+                    //parsing
+                    if (pair.Key.Contains("_"))
+                    {
+                        destroyThis = pair.Key.Replace("_", " ");
+                    }
+                    destroyThis = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(destroyThis);
+
+
+                    if (updateCount == 0)        //if used up all the ingredients, delete them from the world
+                    {
+                        Destroy(GameObject.Find(destroyThis));
+                    }
+
+                    else
+                    {
+                        ItemData data = GameObject.Find(destroyThis).GetComponent<ItemData>();
+                        data.amount = updateCount;
+                        data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+                    }
+                }
+            }
         }
-        destroyThis = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(destroyThis);
-
-
-
-        //if there's still leftover from crafting, update item inventory data for amount
-        ItemData data = GameObject.Find(destroyThis).GetComponent<ItemData>();
-        data.amount = updateCount;
-        data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
-
-        if (updateCount == 0)        //if used up all the ingredients, delete them from the world
-        {
-            Destroy(GameObject.Find(destroyThis));
-        }
-
-        */
 
         if (craftItem != null)
         {
             //instantiate object
             inv.AddItem(craftItem.ID);
-
         }
 
-        //clear out lists and stuff
-        craftS.count = 0;
-
-        //if can still make, leave finished item icon, else delete
-        Destroy(craftSlot.transform.GetChild(0).gameObject);
-        //craftS.craftItemIng.Clear();
+        ClearAll();
     }
 
     public void ClearAll()
     {
+        if (craftS.count > 0)
+        {
+            
+        }
+        craftS.craftItemIng.Clear();
 
+        if (craftSlot.transform.childCount > 0)
+        {
+            Destroy(craftSlot.transform.GetChild(0).gameObject);
+        }
     }
+
 }
