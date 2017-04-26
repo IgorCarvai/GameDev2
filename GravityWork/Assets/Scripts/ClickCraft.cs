@@ -14,6 +14,7 @@ public class ClickCraft : MonoBehaviour {
 
     ItemDatabase database;
     GameObject craftSlot;
+    GameObject craftArea;
 
     private Dictionary<string, int> craftItemIng = new Dictionary<string, int>(); //to check inventory items against, final item ingredients
 
@@ -23,6 +24,7 @@ public class ClickCraft : MonoBehaviour {
         inv = GameObject.Find("Inventory").GetComponent<Inventory>();
         craftS = GameObject.Find("Inventory").GetComponent<CraftingSystem>();
         craftSlot = GameObject.Find("FinishedItem");
+        craftArea = GameObject.Find("Craftable Area");
 
         craftItemIng = GameObject.Find("Inventory").GetComponent<CraftingSystem>().craftItemIng;
     }
@@ -76,17 +78,29 @@ public class ClickCraft : MonoBehaviour {
         {
             //instantiate object
             inv.AddItem(craftItem.ID);
+            ClearAll();
         }
-
-        ClearAll();
     }
 
     public void ClearAll()
     {
-        if (craftS.count > 0)
+        Debug.Log("pressing clear");
+
+        foreach (Transform child in craftArea.transform)
         {
-            
+            Debug.Log("looking through"); 
+
+            if (child.transform.childCount > 0)
+            {
+                Debug.Log("trying to move item");
+                Transform moveItem = child.transform.GetChild(0).GetComponentInChildren<Transform>();
+                moveItem.transform.SetParent(GameObject.Find("Inventory Panel").transform);
+                moveItem.transform.position = (GameObject.Find("Inventory Panel").transform.position);
+
+                continue;
+            }
         }
+
         craftS.craftItemIng.Clear();
 
         if (craftSlot.transform.childCount > 0)
