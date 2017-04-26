@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Music.cs" />
      <Compile Include="Assets\Scripts\AngieScript.cs" />
      <Compile Include="Assets\Scripts\AngieScript2.cs" />
      <Compile Include="Assets\Scripts\AvinScript2.cs" />
