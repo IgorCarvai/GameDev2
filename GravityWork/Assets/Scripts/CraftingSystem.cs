@@ -53,11 +53,16 @@ public class CraftingSystem : MonoBehaviour {
                                 if (toMake.Count == 1)//put first items recipes in
                                 {
                                     sortList.Add(item.Slug);
+                                    craftItemIng.Add(pair.Key, pair.Value);
                                 }
 
                                 if (sortList.Contains(item.Slug) && toMake.Count > 1 && count < toMake.Count)
                                 {
                                     count++;
+
+                                    if (!craftItemIng.ContainsKey(pair.Key))
+                                        craftItemIng.Add(pair.Key, pair.Value);
+
                                 }
                             }
                         }
@@ -67,7 +72,6 @@ public class CraftingSystem : MonoBehaviour {
                     {
                         Debug.Log("can make a " + item.Slug);
                         craftItem = item;
-                        craftItemIng = item.Ingredients;
 
                         //instantiate object
                         GameObject done = Instantiate(itemp) as GameObject;

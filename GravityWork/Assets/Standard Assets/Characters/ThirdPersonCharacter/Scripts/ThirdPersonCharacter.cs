@@ -20,9 +20,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		const float k_Half = 0.5f;
 		float m_TurnAmount;
 		float m_ForwardAmount;
-		private AudioSource source;
+		public AudioSource source;
 		public AudioClip[] list;
-
 
 		void Awake(){
 			source = GetComponent<AudioSource> ();
@@ -60,62 +59,46 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				ApplyExtraTurnRotation ();
 
 				UpdateAnimator (move);
-
-			
+				
 		}
-
-
-
-
 
 		void UpdateAnimator(Vector3 move)
 		{
 			//Debug.Log (m_ForwardAmount);
 			// update the animator parameters
-			m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
-			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
-			m_Animator.SetBool("OnGround", m_IsGrounded);
-
+			m_Animator.SetFloat ("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
+			m_Animator.SetFloat ("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
+			m_Animator.SetBool ("OnGround", m_IsGrounded);
+		
 			//Debug.Log ("hi"+Time.deltaTime);
-			if (!m_IsGrounded)
-			{
-				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
+			if (!m_IsGrounded) {
+				m_Animator.SetFloat ("Jump", m_Rigidbody.velocity.y);
 			}
 
 			// calculate which leg is behind, so as to leave that leg trailing in the jump animation
 			// (This code is reliant on the specific run cycle offset in our animations,
 			// and assumes one leg passes the other at the normalized clip times of 0.0 and 0.5)
 			float runCycle =
-				Mathf.Repeat(
-					m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime + m_RunCycleLegOffset, 1);
+				Mathf.Repeat (
+					m_Animator.GetCurrentAnimatorStateInfo (0).normalizedTime + m_RunCycleLegOffset, 1);
 			float jumpLeg = (runCycle < k_Half ? 1 : -1) * m_ForwardAmount;
-			if (m_IsGrounded)
-			{
-				m_Animator.SetFloat("JumpLeg", jumpLeg);
+			if (m_IsGrounded) {
+				m_Animator.SetFloat ("JumpLeg", jumpLeg);
 			}
 
 			// the anim speed multiplier allows the overall speed of walking/running to be tweaked in the inspector,
 			// which affects the movement speed because of the root motion.
-			if (m_IsGrounded == true && source.isPlaying == false && move.magnitude > 0) {
-				source.PlayOneShot (list[Random.Range(0,list.Length)], 1f);
+			if (m_IsGrounded == true && source.isPlaying == false && move.magnitude > 0 && m_ForwardAmount > 0.5) {
+				source.PlayOneShot (list [Random.Range (0, list.Length)], 0.75f);
 			}
 
-			if (m_IsGrounded && move.magnitude > 0)
-			{
+			if (m_IsGrounded && move.magnitude > 0) {
 				m_Animator.speed = m_AnimSpeedMultiplier;
-			}
-			else
-			{
+			} else {
 				// don't use that while airborne
 				m_Animator.speed = 1;
 			}
 		}
-
-
-
-
-
-
 		void ApplyExtraTurnRotation()
 		{
 			// help the character turn faster (this is in addition to root rotation in the animation)

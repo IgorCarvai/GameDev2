@@ -22,8 +22,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		private GameObject tooltip;
 		private AudioSource source;
 		public AudioClip menu;
-		private float volLowRange = 0.9f;
-		private float volHighRange = 1.5f;
+		private float volLowRange = 1.2f;
+		private float volHighRange = 2.0f;
 
 		void Awake() {
 			source = GetComponent<AudioSource> ();
