@@ -20,6 +20,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		public GameObject E;
 		public GameObject craftSystem;
 		private GameObject tooltip;
+		private AudioSource source;
+		public AudioClip menu;
+		private float volLowRange = 0.9f;
+		private float volHighRange = 1.5f;
+
+		void Awake() {
+			source = GetComponent<AudioSource> ();
+		}
 
 		void toggleInventory(){
 			if (E.GetComponent<Canvas>().isActiveAndEnabled && !Input.GetMouseButton(0)) {
@@ -70,11 +78,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private void Update()
 		{
 			if (start) {
-				E.GetComponent<Canvas>().enabled = false;
+				E.GetComponent<Canvas> ().enabled = false;
 				craftSystem.SetActive (false);
 				start = false;
 			}
 			if(Input.GetKeyUp(KeyCode.I)){
+				float vol = UnityEngine.Random.Range(volLowRange, volHighRange);
+				source.PlayOneShot (menu,vol);
 				toggleInventory ();
 				toggleCraft ();
 			}

@@ -20,14 +20,20 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		const float k_Half = 0.5f;
 		float m_TurnAmount;
 		float m_ForwardAmount;
+		private AudioSource source;
+		public AudioClip[] list;
 
 
+		void Awake(){
+			source = GetComponent<AudioSource> ();
+		}
 
 		void Start()
 		{
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
 			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+
 		}
 		void Update(){
 
@@ -90,6 +96,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			// the anim speed multiplier allows the overall speed of walking/running to be tweaked in the inspector,
 			// which affects the movement speed because of the root motion.
+			if (m_IsGrounded == true && source.isPlaying == false && move.magnitude > 0) {
+				source.PlayOneShot (list[Random.Range(0,list.Length)], 1f);
+			}
+
 			if (m_IsGrounded && move.magnitude > 0)
 			{
 				m_Animator.speed = m_AnimSpeedMultiplier;
@@ -116,6 +126,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 
 	}
+}
 //}
 ///*
 // * using UnityEngine;
@@ -342,7 +353,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 //			}
 //		}
 //	}
-//}
+// }
 //
 //
 //*/
