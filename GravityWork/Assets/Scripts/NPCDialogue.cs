@@ -75,11 +75,11 @@ public class NPCDialogue : MonoBehaviour
                 if (textNumber == 1)
                     dialogueLine = "I was looking all over for you.";
                 if (textNumber == 2)
-                    dialogueLine = "Go and find the others, i'll meet u at the base";
+                    dialogueLine = "Go and find the others, I'll meet you at the base.";
                 if (textNumber == 3)
                     dialogueLine = "You still havent found anyone else.";
                 if (textNumber == 4)
-                    dialogueLine = "We are still mising Ridi";
+                    dialogueLine = "We are still mising Ridi.";
 				if (textNumber == 5)
 					dialogueLine = "Find Angie then come here.";
 

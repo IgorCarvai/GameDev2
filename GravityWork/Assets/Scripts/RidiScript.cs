@@ -34,6 +34,7 @@ public class RidiScript : MonoBehaviour {
 
 	// Update is called once per frame 
 	void Update () {
+
 		if (lookAt)
 			this.transform.LookAt (playerT.position);
 
@@ -48,6 +49,7 @@ public class RidiScript : MonoBehaviour {
 					countdown = true;
 					calcText ();
 					dialogue.checkConditions (2,numText);
+					foundRidi = true;
 				}
 			}
 		}
@@ -59,14 +61,12 @@ public class RidiScript : MonoBehaviour {
 				hastped = true;
 				transform.position = new Vector3 (-21.8f, 400.6f, -6.4f);
 				transform.eulerAngles = new Vector3 (-5.58f, -266.5f, -1.74f);
-				gameObject.GetComponent<SphereCollider>().radius=6;			
+				gameObject.GetComponent<SphereCollider>().radius=5;			
 			}
 		}
 
 	}
 	public void calcText(){
-		foundAlvin = planetGravityBody.FoundAlvin();
-		foundTangie = planetGravityBody.FoundTangie ();
 		if (firstSight) {
 			numText = 1;
 		} else if (tpToBase) {
@@ -98,11 +98,19 @@ public class RidiScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col){
 
+		foundAlvin = planetGravityBody.FoundAlvin();
+		foundTangie = planetGravityBody.FoundTangie ();
+
+
 		calcText ();
 		dialogue.checkConditions (2,numText);
 		if (col.gameObject.tag == "Player"&&col.GetType()==typeof(CapsuleCollider)) {
 			triggersIn++;
 			if (triggersIn == 1) {
+				if (foundRidi && foundTangie && foundAlvin) {
+
+					Application.LoadLevel (4);
+				}
 				lookAt = true;
 				dialogue.showText ();
 				playerCol = true;

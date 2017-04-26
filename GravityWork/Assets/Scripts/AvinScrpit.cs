@@ -49,6 +49,7 @@ public class AvinScrpit : MonoBehaviour {
 					countdown = true;
 					calcText ();
 					dialogue.checkConditions (1,numText);
+					foundAlvin = true;
 				}
 			}
 		}
@@ -60,14 +61,12 @@ public class AvinScrpit : MonoBehaviour {
 				hastped = true;
 				transform.position = new Vector3 (-52.8f, 372.4f, -78.7f);
 				transform.eulerAngles = new Vector3 (-13.54f, -29.445f, 24.596f);
-				gameObject.GetComponent<SphereCollider>().radius=6;
+				gameObject.GetComponent<SphereCollider>().radius=5;
 			}
 		}
 
 	}
 	public void calcText(){
-		foundTangie = planetGravityBody.FoundTangie();
-		foundRidi = planetGravityBody.FoundRidi ();
 
 
 		if (firstSight) {
@@ -99,11 +98,20 @@ public class AvinScrpit : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col){
+
+		foundTangie = planetGravityBody.FoundTangie();
+		foundRidi = planetGravityBody.FoundRidi ();
+
+
 		calcText ();
 		dialogue.checkConditions (1,numText);
 		if (col.gameObject.tag == "Player"&&col.GetType()==typeof(CapsuleCollider)) {
 			triggersIn++;
 			if (triggersIn == 1) {
+				if (foundRidi && foundTangie && foundAlvin) {
+
+					Application.LoadLevel (4);
+				}
 				lookAt = true;
 				dialogue.showText ();
 				playerCol = true;

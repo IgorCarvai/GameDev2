@@ -111,7 +111,7 @@ public class Dialogue : MonoBehaviour {
 
 			_isDialoguePlaying = false;
 		}
-        if (Input.GetKeyDown(KeyCode.Return))
+		if (Input.GetKeyDown(KeyCode.Return)&&(Application.loadedLevel==2||Application.loadedLevel==4))
         {
             if (!_isDialoguePlaying)
             {
@@ -123,6 +123,9 @@ public class Dialogue : MonoBehaviour {
 
 		if (_isEndOfDialogue && Application.loadedLevel==2) {
 			Application.LoadLevel (3);
+		}
+		if (_isEndOfDialogue && Application.loadedLevel==4) {
+			Application.LoadLevel (5);
 		}
     }
 

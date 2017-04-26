@@ -15,85 +15,85 @@ public class itemPickUp : MonoBehaviour {
 
 	void Start()
 	{
-		if (name == "Poop")
+		if (name.Contains("Poop"))
 			ID = 0;
-		if (name == "Grass")
+		if (name.Contains("Grass"))
 			ID = 1;		
-		if (name == "Acid")
+		if (name.Contains("Acid"))
 			ID = 2;
-		if (name == "Split")
+		if (name.Contains("Split"))
 			ID = 3;
-		if (name == "Bone")
+		if (name.Contains("Bone"))
 			ID = 4;
-		if (name == "Butterfly Scales")
+		if (name.Contains("Butterfly Scales"))
 			ID = 5;		
-		if (name == "Cloth")
+		if (name.Contains("Cloth"))
 			ID = 6;
-		if (name == "Coal")
+		if (name.Contains("Coal"))
 			ID = 7;
-		if (name == "Crystal")
+		if (name.Contains("Crystal"))
 			ID = 8;
-		if (name == "Dirt")
+		if (name.Contains("Dirt"))
 			ID = 9;		
-		if (name == "Flowers")
+		if (name.Contains("Flowers"))
 			ID = 10;
-		if (name == "Hairball")
+		if (name.Contains("Hairball"))
 			ID = 11;
-		if (name == "Landfill Trash")
+		if (name.Contains("Landfill Trash"))
 			ID = 12;
-		if (name == "Match")
+		if (name.Contains("Match"))
 			ID = 13;		
-		if (name == "Mirror Shards")
+		if (name.Contains("Mirror Shards"))
 			ID = 14;
-		if (name == "Oil")
+		if (name.Contains("Oil"))
 			ID = 15;
-		if (name == "Rocks")
+		if (name.Contains("Rocks"))
 			ID = 16;
-		if (name == "Roots")
+		if (name.Contains("Roots"))
 			ID = 17;		
-		if (name == "Snakeskin")
+		if (name.Contains("Snakeskin"))
 			ID = 18;
-		if (name == "Squirrel Fluff")
+		if (name.Contains("Squirrel Fluff"))
 			ID = 19;
-		if (name == "Steel")
+		if (name.Contains("steel"))
 			ID = 20;
-		if (name == "Tree Branch")
+		if (name.Contains("Tree Branch"))
 			ID = 21;
-		if (name == "Water")
+		if (name.Contains("Water"))
 			ID = 22;
-		if (name == "Wood")
+		if (name.Contains("Wood"))
 			ID = 23;		
-		if (name == "Fuel Tank")
+		if (name.Contains("Fuel Tank"))
 			ID = 24;
-		if (name == "LED Lights")
+		if (name.Contains("LED Lights"))
 			ID = 25;
-		if (name == "Engine")
+		if (name.Contains("Engine"))
 			ID = 26;
-		if (name == "Radiator")
+		if (name.Contains("Radiator"))
 			ID = 27;		
-		if (name == "Sensors")
+		if (name.Contains("Sensors"))
 			ID = 28;
-		if (name == "Solar Panels")
+		if (name.Contains("Solar Panels"))
 			ID = 29;
-		if (name == "Solid Rocket Booster")
+		if (name.Contains("Solid Rocket Booster"))
 			ID = 30;
-		if (name == "Thrusters")
+		if (name.Contains("Thrusters"))
 			ID = 31;
-		if (name == "Wire")
+		if (name.Contains("Wire"))
 			ID = 32;
-		if (name == "Cog")
+		if (name.Contains("Cog"))
 			ID = 33;		
-		if (name == "Screw")
+		if (name.Contains("Screw"))
 			ID = 34;
-		if (name == "Piston")
+		if (name.Contains("Piston"))
 			ID = 35;
-		if (name == "Pulse Pusher")
+		if (name.Contains("Pulse Pusher"))
 			ID = 36;
-		if (name == "Ballistic Bomber")
+		if (name.Contains("Ballistic Bomber"))
 			ID = 37;		
-		if (name == "The Piercer")
+		if (name.Contains("The Piercer"))
 			ID = 38;
-		if (name == "Rapid Ripper")
+		if (name.Contains("Rapid Ripper"))
 			ID = 39;
 
 		inv = GameObject.Find("Inventory").GetComponent<Inventory>();
@@ -122,7 +122,7 @@ public class itemPickUp : MonoBehaviour {
 	}
 	void Update () {
 		if (Input.GetKeyUp (KeyCode.E) && playerCol == true) {
-			
+			Debug.Log ("ID is: " + ID);
 			if (ID == 4) {
 				for (int i = 0; i < 8; i++) {
 					inv.AddItem (ID);

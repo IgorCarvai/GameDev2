@@ -34,6 +34,7 @@ public class AngieScript : MonoBehaviour {
 
 	// Update is called once per frame 
 	void Update () {
+
 		if (lookAt)
 			this.transform.LookAt (playerT.position);
 
@@ -48,6 +49,7 @@ public class AngieScript : MonoBehaviour {
 					countdown = true;
 					calcText ();
 					dialogue.checkConditions (3,numText);
+					foundTangie = true;
 				}
 			}
 		}
@@ -59,14 +61,12 @@ public class AngieScript : MonoBehaviour {
 				hastped = true;
 				transform.position = new Vector3 (-85.6f, 379.5f, -6.1f);
 				transform.eulerAngles = new Vector3 (-14.3f, 30.36f, 20.4f);
-				gameObject.GetComponent<SphereCollider>().radius=6;
+				gameObject.GetComponent<SphereCollider>().radius=5;
 			}
 		}
 
 	}
 	public void calcText(){
-		foundAlvin = planetGravityBody.FoundAlvin();
-		foundRidi = planetGravityBody.FoundRidi ();
 		if (firstSight) {
 			numText = 1;
 		} else if (tpToBase) {
@@ -98,11 +98,18 @@ public class AngieScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col){
 
+		foundAlvin = planetGravityBody.FoundAlvin();
+		foundRidi = planetGravityBody.FoundRidi ();
+
 		calcText ();
 		dialogue.checkConditions (3,numText);
 		if (col.gameObject.tag == "Player"&&col.GetType()==typeof(CapsuleCollider)) {
 			triggersIn++;
 			if (triggersIn == 1) {
+				if (foundRidi && foundTangie && foundAlvin) {
+
+					Application.LoadLevel (4);
+				}
 				lookAt = true;
 				dialogue.showText ();
 				playerCol = true;
