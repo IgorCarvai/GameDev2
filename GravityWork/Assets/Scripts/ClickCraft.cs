@@ -1,11 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using LitJson;
 using System.Globalization;
 using UnityEngine;
 
-public class ClickCraft : MonoBehaviour {
+public class ClickCraft : MonoBehaviour
+{
 
     int count;
 
@@ -84,19 +85,17 @@ public class ClickCraft : MonoBehaviour {
 
     public void ClearAll()
     {
-        Debug.Log("pressing clear");
-
         foreach (Transform child in craftArea.transform)
         {
-            Debug.Log("looking through"); 
-
             if (child.transform.childCount > 0)
             {
-                Debug.Log("trying to move item");
                 Transform moveItem = child.transform.GetChild(0).GetComponentInChildren<Transform>();
-                moveItem.transform.SetParent(GameObject.Find("Inventory Panel").transform);
-                moveItem.transform.position = (GameObject.Find("Inventory Panel").transform.position);
-
+                ItemData data = moveItem.GetComponent<ItemData>();
+                for (int i = 0; i < data.amount; i++)
+                {
+                    inv.AddItem(data.item.ID);
+                }
+                Destroy(child.transform.GetChild(0).gameObject);
                 continue;
             }
         }
