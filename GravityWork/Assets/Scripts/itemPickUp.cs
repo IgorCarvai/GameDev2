@@ -79,7 +79,7 @@ public class itemPickUp : MonoBehaviour {
 			ID = 30;
 		if (name.Contains("Thrusters"))
 			ID = 31;
-		if (name.Contains("Wire"))
+		if (name.Contains("wire"))
 			ID = 32;
 		if (name.Contains("Cog"))
 			ID = 33;		
@@ -123,13 +123,20 @@ public class itemPickUp : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyUp (KeyCode.E) && playerCol == true) {
 			Debug.Log ("ID is: " + ID);
-			if (ID == 4) {
+			if (ID == 4 || ID == 20) {
 				for (int i = 0; i < 8; i++) {
 					inv.AddItem (ID);
 				}
+			} else if (ID == 32) {
+				for (int i = 0; i < 6; i++) {
+					inv.AddItem (ID);
+				}
+				
 			} else {
 				inv.AddItem (ID);
+
 			}
+
 			Destroy (this.gameObject);
 		}
 	}
