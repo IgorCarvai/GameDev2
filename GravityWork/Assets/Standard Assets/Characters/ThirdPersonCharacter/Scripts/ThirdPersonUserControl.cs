@@ -44,15 +44,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 		}
 		void toggleCraft(){
-			if (cpuCollided) {
+			//if (cpuCollided) {
 
-				if (craftSystem.activeSelf) {
-					craftSystem.SetActive (false);
-				} else {
+			//	if (craftSystem.activeSelf) {
+			//		craftSystem.SetActive (false);
+			//	} else {
 					craftSystem.SetActive (true);
-				}
+			//	}
 
-			}
+			//}
 
 		}
 		 

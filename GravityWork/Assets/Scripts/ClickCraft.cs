@@ -12,12 +12,20 @@ public class ClickCraft : MonoBehaviour
 
     private Inventory inv;
     private CraftingSystem craftS;
+	public AudioSource source;
+	public AudioClip minecraft;
 
     ItemDatabase database;
     GameObject craftSlot;
     GameObject craftArea;
 
     private Dictionary<string, int> craftItemIng = new Dictionary<string, int>(); //to check inventory items against, final item ingredients
+
+	void Awake(){
+
+		source = GetComponent<AudioSource> ();
+
+	}
 
     void Start()
     {
@@ -79,6 +87,7 @@ public class ClickCraft : MonoBehaviour
         {
             //instantiate object
             inv.AddItem(craftItem.ID);
+			source.PlayOneShot (minecraft, 1F);
             ClearAll();
         }
     }

@@ -1,13 +1,13 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{90AF5693-7E2F-7D2F-B7A4-DA9BF0E48BB4}") = "GravityWork", "Assembly-CSharp-firstpass.csproj", "{10BB2ADC-EA62-0BD1-873D-84F71AE1EBEB}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GravityWork", "Assembly-CSharp-firstpass.csproj", "{10BB2ADC-EA62-0BD1-873D-84F71AE1EBEB}"
 EndProject
-Project("{90AF5693-7E2F-7D2F-B7A4-DA9BF0E48BB4}") = "GravityWork", "Assembly-CSharp.csproj", "{A37648CF-2D72-898B-1A7C-5AFE8BA2F630}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GravityWork", "Assembly-CSharp.csproj", "{A37648CF-2D72-898B-1A7C-5AFE8BA2F630}"
 EndProject
-Project("{90AF5693-7E2F-7D2F-B7A4-DA9BF0E48BB4}") = "GravityWork", "Assembly-CSharp-Editor-firstpass.csproj", "{B30C425D-F9D3-7A9F-3783-117C891A32A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GravityWork", "Assembly-CSharp-Editor-firstpass.csproj", "{B30C425D-F9D3-7A9F-3783-117C891A32A3}"
 EndProject
-Project("{90AF5693-7E2F-7D2F-B7A4-DA9BF0E48BB4}") = "GravityWork", "Assembly-CSharp-Editor.csproj", "{2E7E1F96-9E0D-B185-EF2C-7353A1CA5456}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GravityWork", "Assembly-CSharp-Editor.csproj", "{2E7E1F96-9E0D-B185-EF2C-7353A1CA5456}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
