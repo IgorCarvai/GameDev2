@@ -123,12 +123,17 @@ public class itemPickUp : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyUp (KeyCode.E) && playerCol == true) {
 			Debug.Log ("ID is: " + ID);
-			if (ID == 4 || ID == 20) {
+			if (ID == 4) {
 				for (int i = 0; i < 8; i++) {
 					inv.AddItem (ID);
 				}
-			} else if (ID == 32) {
-				for (int i = 0; i < 6; i++) {
+			}else if (ID == 20) {
+				for (int i = 0; i < 15; i++) {
+					inv.AddItem (ID);
+				}
+				
+			}else if (ID == 32) {
+				for (int i = 0; i < 5; i++) {
 					inv.AddItem (ID);
 				}
 				

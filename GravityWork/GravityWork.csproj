@@ -105,6 +105,7 @@
     <Compile Include="Assets\Scripts\CraftingSystem.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\EditorHelper\ObjectGroup.cs" />
+    <Compile Include="Assets\Scripts\EndGame.cs" />
     <Compile Include="Assets\Scripts\FollowScript.cs" />
     <Compile Include="Assets\Scripts\Gravity.cs" />
     <Compile Include="Assets\Scripts\GravityBody.cs" />

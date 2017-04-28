@@ -207,8 +207,7 @@
 		{
 			"steel": 10,
 			"wire": 10,
-			"screw": 15,
-			"coal": 30
+			"screw": 15
 		},
 		"stackable": false,
 		"slug": "fuel_tank"
@@ -233,7 +232,6 @@
 		{
 			"wire": 15,
 			"screw": 25,
-			"steel": 25,
 			"piston": 3
 		},
 		"stackable": false,
@@ -246,8 +244,7 @@
 		"ingredients": 
 		{
 			"steel": 15,
-			"screw": 10,
-			"cloth": 10
+			"screw": 10
 		},
 		"stackable": false,
 		"slug": "radiator"
@@ -258,6 +255,7 @@
 		"description": "For detecting spatial movement in outer space!",
 		"ingredients": 
 		{
+			"cog": 5,
 			"steel": 10,
 			"wire": 5
 		},
@@ -272,7 +270,7 @@
 		{
 			"mirror_shards": 10,
 			"steel": 5,
-			"wire": 2
+			"wire": 1
 		},
 		"stackable": false,
 		"slug": "solar_panels"
@@ -285,7 +283,6 @@
 		{
 			"steel": 30,
 			"screw": 10,
-			"coal": 10,
 			"piston": 2
 		},
 		"stackable": false,
