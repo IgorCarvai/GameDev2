@@ -1,83 +1,86 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class Dialogue : MonoBehaviour {
+public class Dialogue : MonoBehaviour
+{
 
+    int count = 0;
     private Text _textComponent;
     private Text speaker;
 
     public string whoTalking;
     string[] DialogueStrings = {
-        "L: I hate gravity fluxes.",
-        "L: (The heck is up with the gravity systems today?)",
-        "L: Status report before we break atmosphere.",
-        "T: Really? We're really doing this NOW?",
-        "R: Aw, lay off Tangie. Cappy just got done settling some widdle tummy troubles.",
-        "A: Ah! Um! En route to Auroran's troposphere with no anticipated delays, Captain.",
-        "L: Excel-",
-        "R: Spoke too soon. Went and incurred the wrath of Murphy you did.",
-        "R: (This, ladies and gentlemen, is what you might call Murphy's law.)",
-        "   ...",
-        "L: Well, don't just stand there. Get to your escape pods, tykes.",
+        "L: I hate gravity fluxes.     ",
+        "L: (The heck is up with the gravity systems today?)     ",
+        "L: Status report before we break atmosphere.     ",
+        "T: Really? We're really doing this NOW?     ",
+        "R: Aw, lay off Tangie. Cappy just got done settling some widdle tummy troubles.     ",
+        "A: Ah! Um! En route to Auroran's troposphere with no anticipated delays, Captain.     ",
+        "L: Excel-                    ",
+        "R: Spoke too soon. Went and incurred the wrath of Murphy you did.     ",
+        "R: (This, ladies and gentlemen, is what you might call Murphy's law.)     ",
+        "   ...     ",
+        "L: Well, don't just stand there. Get to your escape pods, tykes.     ",
         "   ",
         "   ",
-	"   ...",
-	"   ...",
-	"S: --is dangerous. We ask that you take what you've already gathered and return to the empire immediately",
-	"L: ...",
-        "L: This is your captain speaking. All units report.",
-        "L: Role call everyone.",
-        "L: Captain Lua here. Anyone who can hear this sound off.", 
-        "L: (and give me status updates...)",
-        "   ...",
-        "L: All units report!",
-        "   ...",
-        "L: Rats!",
-        "R: ---anging from a tree~ Never beeeeen so happy as haaaan--",
-        "L: Ridi?! Ridi, you there?",
-        "R: Eh? Oh hey Cappy! Thanks for tuning in to Crashlander's Community Radio.",
-        "L: Not  the time Ridi. Where are you?",
-        "R: Eh, I dunno maybe... Hanging from a treeee~--",
-        "L: Beyond that.",
-        "R: Beats me,  You the navingator.",
-        "L: At least describe your surroundings.",
-        "R: Ummmmmmm... more trees?",
-        "L: (Sigh)",
-        "L: Just stay put until I can get to you.",
-        "R: Sure, sure. Guess I'm just gonna have to sing even louder now to trumpet my location and all that.",
-        "L: ...Sure,  Have fun.",
-        "R: I will~",
+        "   ...     ",
+        "   ...     ",
+        "   ...     ",
+        "S: --is dangerous. We ask that you take what you've already gathered and return to the empire immediately     ",
+        "L: ..."     ,
+        "L: This is your captain speaking. All units report.     ",
+        "L: Role call everyone.     ",
+        "L: Captain Lua here. Anyone who can hear this sound off.     ",
+        "L: (and give me status updates...)     ",
+        "   ...     ",
+        "L: All units report!     ",
+        "   ...     ",
+        "L: Rats!     ",
+        "R: ---anging from a tree~ Never beeeeen so happy as haaaan--     ",
+        "L: Ridi?! Ridi, you there?     ",
+        "R: Eh? Oh hey Cappy! Thanks for tuning in to Crashlander's Community Radio.     ",
+        "L: Not  the time Ridi. Where are you?     ",
+        "R: Eh, I dunno maybe... Hanging from a treeee~--     ",
+        "L: Beyond that.     ",
+        "R: Beats me,  You the navingator.     ",
+        "L: At least describe your surroundings.     ",
+        "R: Ummmmmmm... more trees?     ",
+        "L: (Sigh)     ",
+        "L: Just stay put until I can get to you.     ",
+        "R: Sure, sure. Guess I'm just gonna have to sing even louder now to trumpet my location and all that.     ",
+        "L: ...Sure,  Have fun.     ",
+        "R: I will~     ",
         "   ",
-        "T: --Pod thr--",
-        "L: Captain Lua here. Can your hear me?",
-        "T: --Cap--ain? Tangi---f Pod --",
-        "L: Repeat that. Your channel's a little distorted, Tangie.",
-        "T: ---ng it. h--- on.",
-        "T: Better?",
-        "L: Much.",
-        "T: Finally.",
-        "L: What happened?",
-        "T: Stupid pod decided to crashlandland in a gorge. Shot my reception to a zillion peices. Took me longer than I 'd like to rid up a Comm extender.",
-        "L: Can you get out?",
-        "T: I'm trying but...",
-        "L: But?",
-        "T: But... Ithinkmylegsbroken.",
-        "T: ...",
-        "L: Ah. Well. That's a thing.",
-        "T: Yeah. But I think I can get out if I just t--",
-        "L: Um, no. You're injured, Tangie. Don't aggrivate it more by wiggling aroud.",
-        "T: But--",
-        "L: No. As my subordinate, I need you to stay still and safe until I can reach you.",
-        "T: Fiiine.",
-        "    ",
-        "L: Annd, Aven? Aven can you hear me?",
-        "   ...",
-        "L: Darnit, his radio must have been destroyed in the landing.",
-        "   ...",
-        "L: I'll try to gather Ridi and Tangie before I set out to look for Aven",
-        "L: (Stay put, Aven.)"
+        "T: --Pod thr--     ",
+        "L: Captain Lua here. Can your hear me?     ",
+        "T: --Cap--ain? Tangi---f Pod --     ",
+        "L: Repeat that. Your channel's a little distorted, Tangie.     ",
+        "T: ---ng it. h--- on.     ",
+        "T: Better?     ",
+        "L: Much.     ",
+        "T: Finally.     ",
+        "L: What happened?     ",
+        "T: Stupid pod decided to crashlandland in a gorge. Shot my reception to a zillion peices. Took me longer than I 'd like to rid up a Comm extender.     ",
+        "L: Can you get out?     ",
+        "T: I'm trying but...     ",
+        "L: But?     ",
+        "T: But... Ithinkmylegsbroken.     ",
+        "T: ...     ",
+        "L: Ah. Well. That's a thing.     ",
+        "T: Yeah. But I think I can get out if I just t--     ",
+        "L: Um, no. You're injured, Tangie. Don't aggrivate it more by wiggling aroud.     ",
+        "T: But--     ",
+        "L: No. As my subordinate, I need you to stay still and safe until I can reach you.     ",
+        "T: Fiiine.     ",
+        "         ",
+        "L: Annd, Aven? Aven can you hear me?     ",
+        "   ...     ",
+        "L: Darnit, his radio must have been destroyed in the landing.     ",
+        "   ...     ",
+        "L: I'll try to gather Ridi and Tangie before I set out to look for Aven     ",
+        "L: (Stay put, Aven.)     "
     };
 
     public float SecondsBetweenCharacters = 0.15f;
@@ -106,12 +109,13 @@ public class Dialogue : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetKeyUp (KeyCode.P)) {
-			_isEndOfDialogue = true;
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            _isEndOfDialogue = true;
 
-			_isDialoguePlaying = false;
-		}
-		if (Input.GetKeyDown(KeyCode.Return)&&(Application.loadedLevel==2||Application.loadedLevel==4))
+            _isDialoguePlaying = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Return) && (Application.loadedLevel == 2 || Application.loadedLevel == 4))
         {
             if (!_isDialoguePlaying)
             {
@@ -121,12 +125,14 @@ public class Dialogue : MonoBehaviour {
 
         }
 
-		if (_isEndOfDialogue && Application.loadedLevel==2) {
-			Application.LoadLevel (3);
-		}
-		if (_isEndOfDialogue && Application.loadedLevel==4) {
-			Application.LoadLevel (5);
-		}
+        if (_isEndOfDialogue && Application.loadedLevel == 2)
+        {
+            Application.LoadLevel(3);
+        }
+        if (_isEndOfDialogue && Application.loadedLevel == 4)
+        {
+            Application.LoadLevel(5);
+        }
     }
 
     private IEnumerator StartDialogue()
@@ -144,21 +150,22 @@ public class Dialogue : MonoBehaviour {
                 if (currentDialogueIndex >= dialogueLength)
                 {
                     _isEndOfDialogue = true;
+                    count = 0;
                 }
             }
 
             yield return 0;
         }
 
-        while (true)
-        {
-            if (Input.GetKeyDown(DialogueInput))
-            {
-                break;
-            }
+        //while (true)
+        //{
+        //    if (Input.GetKeyDown(DialogueInput))
+        //    {
+        //        break;
+        //    }
 
-            yield return 0;
-        }
+        //    yield return 0;
+        //}
 
         HideIcons();
         _isEndOfDialogue = false;
@@ -187,9 +194,9 @@ public class Dialogue : MonoBehaviour {
         else if (stringToDisplay.Contains("A:"))
             whoTalking = "Aven";
 
-	else if (stringToDisplay.Contains("S:"))
+        else if (stringToDisplay.Contains("S:"))
             whoTalking = "Lt. Sangr";
-	    
+
         else
             whoTalking = "";
 
@@ -202,7 +209,7 @@ public class Dialogue : MonoBehaviour {
             c = _textComponent.color;
             c.a = .5f;
 
-            _textComponent.color = c ;
+            _textComponent.color = c;
             speaker.text = whoTalking;
         }
         else
@@ -210,21 +217,23 @@ public class Dialogue : MonoBehaviour {
             _textComponent.color = Color.black;
         }
 
-        while (currentCharacterIndex < stringLength-3)
+        while (currentCharacterIndex < stringLength - 3)
         {
-            _textComponent.text += stringToDisplay[currentCharacterIndex+3];
+            _textComponent.text += stringToDisplay[currentCharacterIndex + 3];
             currentCharacterIndex++;
 
             if (currentCharacterIndex < stringLength)
             {
-                if (Input.GetKey(DialogueInput))
-                {
-                    yield return new WaitForSeconds(SecondsBetweenCharacters * CharacterRateMultiplier);
-                }
-                else
-                {
-                    yield return new WaitForSeconds(SecondsBetweenCharacters);
-                }
+                //if (Input.GetKey(DialogueInput))
+                //{
+                //    yield return new WaitForSeconds(SecondsBetweenCharacters * CharacterRateMultiplier);
+                //}
+                //else
+                //{
+                //    yield return new WaitForSeconds(SecondsBetweenCharacters);
+                //}
+                yield return new WaitForSeconds(SecondsBetweenCharacters);
+
             }
             else
             {
@@ -233,16 +242,33 @@ public class Dialogue : MonoBehaviour {
         }
 
         ShowIcon();
+        count++;
+        Debug.Log(count);
 
-        while (true)
+        if (count == 2)
         {
-            if (Input.GetKeyDown(DialogueInput))
-            {
-                break;
-            }
-
-            yield return 0;
+            GameObject.Find("1_1").SetActive(false);
         }
+
+        else if (count == 6)
+        {
+            GameObject.Find("1_2").SetActive(false);
+        }
+
+        else if (count == 9)
+        {
+            GameObject.Find("1_4").SetActive(false);
+        }
+
+        //while (true)
+        //{
+        //    if (Input.GetKeyDown(DialogueInput))
+        //    {
+        //        break;
+        //    }
+
+        //    yield return 0;
+        //}
 
         HideIcons();
 
