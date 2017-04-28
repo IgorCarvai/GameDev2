@@ -84,7 +84,7 @@ public class NPCDialogue : MonoBehaviour
 					dialogueLine = "Find Angie then come here.";
 
             }
-            else if (sceneNumber >= 5)//cutscene 2
+            else if (sceneNumber >= 4)//cutscene 2
             {
 				if(textNumber == 0)
 	                dialogueLine = "Find objects around the planet and use them to craft using inventory.\nYou can find Bone Steel Wire and Mirror Shards.";
@@ -110,7 +110,7 @@ public class NPCDialogue : MonoBehaviour
 					dialogueLine = "Wheres Angie?";
 				if (textNumber == 5)
 					dialogueLine = "Alvin is always left behind.";
-			} else if (sceneNumber == 5) {//inside spaceship
+			} else if (sceneNumber == 4) {//inside spaceship
 				if (textNumber == 1)
 					dialogueLine = "Parallel Lines have so much in common.";
 				if (textNumber == 2)
@@ -162,7 +162,7 @@ public class NPCDialogue : MonoBehaviour
 				if (textNumber == 5)
 					dialogueLine = "We need the whole team. Go find Alvin quick!";
             }
-            else if (sceneNumber == 5 )//inside spaceship
+            else if (sceneNumber == 4 )//inside spaceship
             {
 				if (textNumber >= 1)
 					dialogueLine = "Lets get building.";
