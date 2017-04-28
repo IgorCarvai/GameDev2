@@ -230,8 +230,8 @@
 		"description": "To get our ship moving!",
 		"ingredients": 
 		{
-			"wire": 15,
-			"screw": 25,
+			"wire": 5,
+			"screw": 5,
 			"piston": 3
 		},
 		"stackable": false,
@@ -243,7 +243,7 @@
 		"description": "To keep us warm in outer space.",
 		"ingredients": 
 		{
-			"steel": 15,
+			"steel": 5,
 			"screw": 10
 		},
 		"stackable": false,
@@ -281,7 +281,7 @@
 		"description": "Used for liftoff!",
 		"ingredients": 
 		{
-			"steel": 30,
+			"steel": 10,
 			"screw": 10,
 			"piston": 2
 		},
