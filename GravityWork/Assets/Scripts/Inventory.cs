@@ -11,10 +11,16 @@ public class Inventory : MonoBehaviour{
     public GameObject inventorySlot;
     public GameObject inventoryItem;
     public ItemDatabase database;
+	public AudioSource source;
+	public AudioClip pickup;
 
     int slotAmount;
     public List<Item> items = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
+
+	void Awake(){
+		source = GetComponent<AudioSource> ();
+	}
 
     void Start()
     {
@@ -40,7 +46,8 @@ public class Inventory : MonoBehaviour{
         //already existing, and stackable
         if (itemToAdd.Stackable && CheckIfItemExists(itemToAdd))
         {
-            for (int i = 0; i < items.Count; i++)
+			source.PlayOneShot (pickup,1f);
+			for (int i = 0; i < items.Count; i++)
                if (items[i].ID == id)
                {
                     //child 0 is text obj
@@ -60,6 +67,7 @@ public class Inventory : MonoBehaviour{
                 {
                     items[i] = itemToAdd;
                     GameObject itemObj = Instantiate(inventoryItem);
+					source.PlayOneShot (pickup,1f);
                     itemObj.GetComponent<ItemData>().item = itemToAdd;
                     itemObj.GetComponent<ItemData>().amount = 1;
                     //slot it's attached to
