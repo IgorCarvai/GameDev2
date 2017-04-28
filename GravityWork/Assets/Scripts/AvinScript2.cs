@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,7 +38,7 @@ public class AvinScript2 : MonoBehaviour {
 		if (playerCol == true) {
 			if(Input.GetKeyUp (KeyCode.E)&&triggersIn==2){
 				numText++;
-				numText = numText % 3;
+				numText = numText % 4;
 				dialogue.checkConditions (1,numText);
 			}
 		}
