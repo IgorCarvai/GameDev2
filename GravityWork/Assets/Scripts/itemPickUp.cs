@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine.UI;
@@ -43,7 +43,7 @@ public class itemPickUp : MonoBehaviour {
 			ID = 12;
 		if (name.Contains("Match"))
 			ID = 13;		
-		if (name.Contains("Mirror Shards"))
+		if (name.Contains("mirror"))
 			ID = 14;
 		if (name.Contains("Oil"))
 			ID = 15;
@@ -132,7 +132,12 @@ public class itemPickUp : MonoBehaviour {
 					inv.AddItem (ID);
 				}
 				
-			} else {
+			}else if (ID == 14) {
+				for (int i = 0; i < 10; i++) {
+					inv.AddItem (ID);
+				}
+				
+			}  else {
 				inv.AddItem (ID);
 
 			}

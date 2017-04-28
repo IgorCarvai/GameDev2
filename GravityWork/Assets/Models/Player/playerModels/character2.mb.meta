@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: 12384edca6eeb9e4ca6ce3debfb7821c
+timeCreated: 1493341046
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: back
+    100002: bottom
+    100004: //RootNode
+    100006: gauntface_shorter_difhair:bottom
+    100008: gauntface_shorter_difhair:EthanBody
+    100010: gauntface_shorter_difhair:left
+    100012: gauntface_shorter_difhair:nurbsCircle1
+    100014: gauntface_shorter_difhair:nurbsCircle2
+    100016: gauntface_shorter_difhair:pCircle1
+    100018: gauntface_shorter_difhair:pCircle2
+    100020: gauntface_shorter_difhair:persp1
+    100022: gauntface_shorter_difhair:persp2
+    100024: gauntface_shorter_difhair:persp3
+    100026: gauntface_shorter_difhair:persp4
+    100028: gauntface_shorter_difhair:persp5
+    100030: left
+    100032: nurbsCircle1
+    100034: nurbsCircle2
+    100036: pCircle1
+    100038: pCircle2
+    100040: persp1
+    400000: back
+    400002: bottom
+    400004: //RootNode
+    400006: gauntface_shorter_difhair:bottom
+    400008: gauntface_shorter_difhair:EthanBody
+    400010: gauntface_shorter_difhair:left
+    400012: gauntface_shorter_difhair:nurbsCircle1
+    400014: gauntface_shorter_difhair:nurbsCircle2
+    400016: gauntface_shorter_difhair:pCircle1
+    400018: gauntface_shorter_difhair:pCircle2
+    400020: gauntface_shorter_difhair:persp1
+    400022: gauntface_shorter_difhair:persp2
+    400024: gauntface_shorter_difhair:persp3
+    400026: gauntface_shorter_difhair:persp4
+    400028: gauntface_shorter_difhair:persp5
+    400030: left
+    400032: nurbsCircle1
+    400034: nurbsCircle2
+    400036: pCircle1
+    400038: pCircle2
+    400040: persp1
+    2300000: gauntface_shorter_difhair:EthanBody
+    2300002: gauntface_shorter_difhair:pCircle1
+    2300004: gauntface_shorter_difhair:pCircle2
+    2300006: pCircle1
+    2300008: pCircle2
+    3300000: gauntface_shorter_difhair:EthanBody
+    3300002: gauntface_shorter_difhair:pCircle1
+    3300004: gauntface_shorter_difhair:pCircle2
+    3300006: pCircle1
+    3300008: pCircle2
+    4300000: pCircle1
+    4300002: pCircle2
+    4300004: gauntface_shorter_difhair:EthanBody
+    4300006: gauntface_shorter_difhair:pCircle1
+    4300008: gauntface_shorter_difhair:pCircle2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
