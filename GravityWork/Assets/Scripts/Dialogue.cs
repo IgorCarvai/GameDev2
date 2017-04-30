@@ -115,7 +115,7 @@ public class Dialogue : MonoBehaviour
 
             _isDialoguePlaying = false;
         }
-        if (Input.GetKeyDown(KeyCode.Return) && (Application.loadedLevel == 2 || Application.loadedLevel == 4))
+        if ((Application.loadedLevel == 2 || Application.loadedLevel == 4))
         {
             if (!_isDialoguePlaying)
             {
