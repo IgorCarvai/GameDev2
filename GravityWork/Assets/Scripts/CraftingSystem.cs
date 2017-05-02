@@ -60,9 +60,8 @@ public class CraftingSystem : MonoBehaviour {
                                 {
                                     count++;
 
-                                    if (!craftItemIng.ContainsKey(pair.Key))
-                                        craftItemIng.Add(pair.Key, pair.Value);
-
+                                    //if (!craftItemIng.ContainsKey(pair.Key))
+                                    //    craftItemIng.Add(pair.Key, pair.Value);
                                 }
                             }
                         }

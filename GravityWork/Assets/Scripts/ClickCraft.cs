@@ -48,46 +48,45 @@ public class ClickCraft : MonoBehaviour
         if amount = 0, delete from world
         create item to inventory
         */
-
-        foreach (KeyValuePair<string, int> finalP in craftItem.Ingredients)
+        if (craftItem != null)
         {
-            foreach (KeyValuePair<string, int> pair in craftItemIng)
+            foreach (KeyValuePair<string, int> finalP in craftItem.Ingredients)
             {
-                if (finalP.Key == pair.Key)
+                foreach (KeyValuePair<string, int> pair in craftItemIng)
                 {
-                    int updateCount = finalP.Value;
-                    updateCount = pair.Value - finalP.Value;
-
-                    string destroyThis = pair.Key;
-
-                    //parsing
-                    if (pair.Key.Contains("_"))
+                    if (finalP.Key == pair.Key)
                     {
-                        destroyThis = pair.Key.Replace("_", " ");
-                    }
-                    destroyThis = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(destroyThis);
+                        int updateCount = finalP.Value;
+                        updateCount = pair.Value - finalP.Value;
 
+                        string destroyThis = pair.Key;
 
-                    if (updateCount == 0)        //if used up all the ingredients, delete them from the world
-                    {
-                        Destroy(GameObject.Find(destroyThis));
-                    }
+                        //parsing
+                        if (pair.Key.Contains("_"))
+                        {
+                            destroyThis = pair.Key.Replace("_", " ");
+                        }
 
-                    else
-                    {
-                        ItemData data = GameObject.Find(destroyThis).GetComponent<ItemData>();
-                        data.amount = updateCount;
-                        data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+                        destroyThis = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(destroyThis);
+
+                        if (updateCount == 0)        //if used up all the ingredients, delete them from the world
+                        {
+                            Destroy(GameObject.Find(destroyThis));
+                        }
+
+                        else
+                        {
+                            ItemData data = GameObject.Find(destroyThis).GetComponent<ItemData>();
+                            data.amount = updateCount;
+                            data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+                        }
                     }
                 }
             }
-        }
 
-        if (craftItem != null)
-        {
             //instantiate object
             inv.AddItem(craftItem.ID);
-			source.PlayOneShot (minecraft, 1F);
+            source.PlayOneShot(minecraft, 1F);
             ClearAll();
         }
     }
@@ -110,6 +109,7 @@ public class ClickCraft : MonoBehaviour
         }
 
         craftS.craftItemIng.Clear();
+        CraftingSystem.toMake.Clear();
 
         if (craftSlot.transform.childCount > 0)
         {
