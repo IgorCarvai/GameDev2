@@ -304,11 +304,7 @@
 		"id": 32,
 		"title": "Wire",
 		"description": "To connect electricity signals.",
-		"ingredients": 
-		{
-			"snakeskin": 2,
-			"cloth": 1
-		},
+		"ingredients": {},
 		"stackable": true,
 		"slug": "wire"
 	},
