@@ -2,39 +2,38 @@ Initialize engine version: 5.5.0f3 (38b4efef76f0)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Renderer: NVIDIA GeForce GTX 960M (ID=0x139b)
     Vendor:   NVIDIA
-    VRAM:     3072 MB
-    Driver:   21.21.13.7633
+    VRAM:     2018 MB
+    Driver:   21.20.16.4534
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-Platform assembly: C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\LitJson.dll (this message is harmless)
-Loading C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\LitJson.dll into Unity Child Domain
+Platform assembly: D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\LitJson.dll (this message is harmless)
+Loading D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\LitJson.dll into Unity Child Domain
 - Completed reload, in  0.024 seconds
-Platform assembly: C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\carvai\Desktop\gitGame\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\System.dll (this message is harmless)
-desktop: 1920x1200 59Hz; virtual: 3840x1200 at 0,0
+Platform assembly: D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\GameDev2Rep\GameDev2\Executable\PC\MarshMallowSpace_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.946021 ms
+UnloadTime: 2.679311 ms
 NullReferenceException: Object reference not set to an instance of an object
   at MenuScript.Awake () [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 
-Setting up 3 worker threads for Enlighten.
-  Thread -> id: 3718 -> priority: 1 
-  Thread -> id: 2bb8 -> priority: 1 
-  Thread -> id: 1d84 -> priority: 1 
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 330 -> priority: 1 
+  Thread -> id: 3308 -> priority: 1 
